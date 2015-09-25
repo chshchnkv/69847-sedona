@@ -2,14 +2,152 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: sedona</title>
+    <title>Седона</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
   </head>
+  
+  
   <body>
+   
+    <header class="page-header">
+      <nav class="main-navigation">
+        <a href="#" class="main-navigation__toggle  main-navigation__toggle--close"></a>
+        <ul class="main-navigation__list  main-navigation__list--opened">
+          <li class="main-navigation__item">
+            <a href="#">Карта штата</a>
+          </li>
+          <li class="main-navigation__item"><a href="#">Информация</a></li>
+          <li class="main-navigation__item"><a href="#">Фото и видео</a></li>
+          <li class="main-navigation__item"><a href="#">Гостиницы</a></li>
+          <li class="main-navigation__item">
+            <a href="index.html" class="main-navigation__logo-link"><img src="logo.png" alt="City of Sedona"></a>
+          </li>
+        </ul>
+        <a href="#" class="main-navigation__toggle  main-navigation__toggle--open"></a>
+      </nav>
+    </header>
+    
+    <main>
+      
+      <div class="welcome">
+        <img src="img/welcome.png" alt="Welcome to the gorgeous" width="196" height="66">
+        <img src="img/sedona.png" alt="Sedona" width="280" height="48">
+        <img src="img/because-grand-canyon-sucks.png" alt="because the Grand Canyon sucks!" width="197" height="54">
+      </div>
+      
+      
+      <div class="features">
+        <section class="features__item">
+          <h2 class="features__header">Седона&nbsp;&mdash;&nbsp;небольшой городок в Аризоне, заслуживающий большего!</h2>
+          <p class="features__text">Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!</p>
+        </section>
+      </div>      
+      
+      
+      <div class="features">
+        
+        <section class="features__item  features__item--blue">
+          <h2 class="feature__header">Настоящий городок</h2>
+          <p class="feature__number">№1</p>
+          <p class="feature__text">Седона не атракцион для туристов, там течет своя жизнь</p>
+        </section>
+        
+        <div class="features__item  features__item--photo">
+          <img class="features__photo" src="img/sedona-1.jpg" width="1600" height="800" alt="City of Sedona">
+        </div>
+        
+      </div>
+      
+      
+      <div class="features">
+        
+        <section class="features__item">
+          <i class="features__icon-hotel"></i>
+          <h2 class="features__header">Жильё</h2>
+          <p class="features__text">Рекомендуем пожить в настоящем мотеле,всё как в кино!</p>
+        </section>
+        
+        <section class="features__item">
+          <i class="features__icon-souvenirs"></i>
+          <h2 class="features__header">Сувениры</h2>
+          <p class="features__text">Не только китайского, но и местного производства!</p>
+        </section>
+        
+        <section class="features__item">
+          <i class="features__icon-food"></i>
+          <h2 class="features__header">Еда</h2>
+          <p class="features__text">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+        </section>
+        
+      </div>
+      
+      
+      <div class="features">
+       
+        <section class="features__item  features__item--blue">
+          <h2 class="features__header">Там есть мост дьявола</h2>
+          <p class="features__number">№2</p>
+          <p class="features__text">Да, по нему можно пройти! Если конечно вы осмелитесь</p>  
+        </section>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн-курсе «<a href="https://htmlacademy.ru/advanced_intensive">Продвинутый HTML и CSS</a>».</p>
+        <div class="features__item  features__item--photo">
+          <img class="features__photo" src="img/sedona-2.jpg" width="1600" height="800" alt="City of Sedona">
+        </div>
+        
+      </div>
+      
+      
+      <div class="features">
 
+        <section class="features__item  features__item--grey">
+          <h2 class="features__header">Небольшая площадь</h2>
+          <p class="features__number">№3</p>
+          <p class="features__text">Все достопримечательности находятся очень близко</p>
+        </section>
+        
+        <section class="features__item  features__item--grey">
+          <h2 class="features__header">Красивая дорога</h2>
+          <p class="features__number">№4</p>
+          <p class="features__text">Ехать в Седону из Лас&#8209;Вегаса совсем не скучно!</p>
+        </section>
+        
+        <section class="features__item  features__item--grey">
+          <h2 class="features__header">Мало туристов</h2>
+          <p class="features__number">№5</p>
+          <p class="features__text">Большинство едет в Гранд Каньон и толпится там</p>
+        </section>
+        
+      </div>
+            
+      
+      <div class="features">
+        <section class="features__item  features__item--search">
+          <h2 class="features__header">Заинтересовались?</h2>
+          <p class="features__text">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          <a class="button button--brown" href="form.html">Найти гостиницу</a>
+        </section>
+      </div>
+
+      <div class="feature feature--map"></div>
+      
+    </main>
+    
+    
+    <footer class="page-footer">
+      <div class="page-footer__hashtag">
+        <a href="#" class="hashtag">#VisitSedona</a>
+      </div>
+      <div class="page-footer__social">
+        <ul class="social-links">
+          <li><a href="#" class="social-links__item-twitter"></a></li>
+          <li><a href="#" class="social-links__item-facebook"></a></li>
+          <li><a href="#" class="social-links__item-youtube"></a></li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="copyright">Разработано <a href="http://htmlacademy.ru"><img src="img/htmlacademy.svg" width="27" height="34" alt="htmlacademy"></a></p>
+      </div>
+    </footer>
     <!-- <script src="js/script.js"></script> -->
-
   </body>
 </html>
