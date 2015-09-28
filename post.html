@@ -22,19 +22,26 @@
         <a href="#" class="main-navigation__toggle  main-navigation__toggle--open"></a>
       </nav>
     </header>
+    
     <main>
-      <div class="sedona"></div><!--картинка с текстом Sedona-->
-      <div class="feature  feature--blog">
+      <div class="sedona">
+        <img src="img/sedona.png" alt="Sedona" width="280" height="48">
+      </div>
+      
+      <section class="seriff-blog">
         <h1>Блог шерифа</h1>
         <p>Седона удивительный город! Горы здесь красного цвета, а местный шериф ведет блог и общается на форумах.</p>
-      </div>
+      </section>
+      
       <article class="post">
-        <section class="post__meta">
+        <div class="post__meta">
           <a href="#" class="post__date">Позавчера</a><a href="#" class="post__category">Происшествия</a>
-        </section>
+        </div>
+        
         <header class="post__header">
-          <h2>Внимание! Сбежала моя домашняя анаконда</h2>
+          <h1>Внимание! Сбежала моя домашняя анаконда</h1>
         </header>
+        
         <section class="post__content">
           <p class="post__preview">Жители Седоны и гости города, будьте бдительны — Сбежала моя домашняя змея. Увидевшему срочно звонить 911 и бежать от нее подальше.</p>
           <h2>Предыстория</h2>
@@ -49,13 +56,16 @@
           <p>Если вы увидите эту змею, сразу <a href="#">звоните 911</a> и бегите со всех ног от нее!</p>
           <h2>Предостережение</h2>
           <p>Не пытайтесь убить змею, если увидите! Помните, что она тоже живое существо, хоть и выглядит не очень приятно. Вот цитата, которая мне очень нравится:</p>
-          <div class="quote">
+          <blockquote class="quote">
             <p>Самый свирепый из зверей — теперь мы знаем — это человек, он убивает даже если не голоден.</p>
-            <em>Адриано Челентано</em>
-          </div>
+            <footer>
+              <cite>Адриано Челентано</cite>
+            </footer>
+          </blockquote>
         </section>
       </article>
-      <section class="blog-navigation">
+      
+      <div class="blog-navigation">
         <div class="row">
           <div class="span_6 col">
             <a href="#" class="blog-navigation__link" rel="prev">Пред.</a>
@@ -71,8 +81,9 @@
             <a href="blog.html" class="blog-navigation__link">Назад к списку</a>
           </div>
         </div>
-      </section>
+      </div>
     </main>
+    
     <footer class="page-footer">
       <div class="page-footer__hashtag">
         <a href="#" class="hashtag">#VisitSedona</a>
