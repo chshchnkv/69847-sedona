@@ -1,0 +1,18 @@
+.social-links {
+  @include list-init;
+  font-size: 0;
+  
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    .button {
+      font-size: $font-size--h2;
+    }
+  }
+}
