@@ -1,0 +1,31 @@
+.facilities {
+  font-size: $font-size;
+  text-transform: $text-transform;
+  text-align: left;
+  color: $text-color;
+  
+  &__item {
+    position: relative;
+    padding: 30px 20px 30px 70px;
+  }
+  
+  &__header {
+    position: relative;
+    margin-top: 0;
+    font-size: $font-size--h2;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -($facilities-icon-size + 10px);
+      @include size($facilities-icon-size, $facilities-icon-size);
+      @include centerV;
+      background-image: url("../img/facilities-sprite.png");
+      background-size: auto $facilities-icon-size;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@include generate_icon(facilities__item, facilities__header, $facilities, $facilities-icon-size);

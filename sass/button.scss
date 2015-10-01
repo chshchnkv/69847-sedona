@@ -1,0 +1,32 @@
+.button {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  padding: 10px 15px;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: 700;
+  line-height: $line-height;
+  
+  text-decoration: none;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  
+  color: $text-color;
+  background-color: $grey--light;
+  
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @include transition;
+  
+  &--blue {
+    color: $text-color--light;
+    background-color: $blue;
+  }
+  
+  &--grey {
+    color: $text-color--light;
+    background-color: $grey--dark;
+  }
+}

@@ -1,0 +1,16 @@
+.copyright {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  
+  font-size: $font-size;
+  color: $text-color;
+  text-decoration: none;
+  text-transform: $text-transform;
+  
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    @include size(27px, 34px);
+  }
+}

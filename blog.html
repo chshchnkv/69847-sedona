@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Блог шерифа</title>
+     <link rel="stylesheet" href="css/style.css"> 
   </head>
+
   <body>
-    <header class="page-header">
+    
+     <header class="page-header">
       <nav class="main-navigation">
         <a href="#" class="main-navigation__toggle  main-navigation__toggle--close"></a>
         <ul class="main-navigation__list  main-navigation__list--opened">
@@ -15,11 +18,10 @@
           <li class="main-navigation__item"><a href="#">Информация</a></li>
           <li class="main-navigation__item"><a href="#">Фото и видео</a></li>
           <li class="main-navigation__item"><a href="#">Гостиницы</a></li>
-          <li class="main-navigation__item">
-            <a href="index.html" class="main-navigation__logo-link"><img src="logo.png" alt="City of Sedona"></a>
+          <li class="main-navigation__item main-navigation__item--logo">
+            <a href="index.html"><img class="main-navigation__logo" src="img/logo.png" alt="City of Sedona" width="276" height="140"></a>
           </li>
         </ul>
-        <a href="#" class="main-navigation__toggle  main-navigation__toggle--open"></a>
       </nav>
     </header>
     
@@ -128,19 +130,23 @@
     </main>
     
     <footer class="page-footer">
+     
       <div class="page-footer__hashtag">
         <a href="#" class="hashtag">#VisitSedona</a>
       </div>
+      
       <div class="page-footer__social">
         <ul class="social-links">
-          <li><a href="#" class="social-links__item-twitter"></a></li>
-          <li><a href="#" class="social-links__item-facebook"></a></li>
-          <li><a href="#" class="social-links__item-youtube"></a></li>
+          <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-twitter"></i></a></li>
+          <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-facebook"></i></a></li>
+          <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-youtube"></i></a></li>
         </ul>
       </div>
+      
       <div class="page-footer__copyright">
-        <p class="copyright">Разработано <a href="http://htmlacademy.ru"><img src="img/htmlacademy.svg" width="27" height="34" alt="htmlacademy"></a></p>
+        <a class="copyright" href="http://htmlacademy.ru">Разработано <img src="img/htmlacademy.svg" alt="HTML Academy" width="27" height="34"></a>
       </div>
+      
     </footer>
   </body>
 </html>

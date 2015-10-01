@@ -1,0 +1,94 @@
+/* 
+  (c) Stanislav Chashchnikov.
+ */
+
+.main-navigation {
+  position: relative;
+  
+  &__toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    
+    display: block;
+    width: 23px;
+    height: 23px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    &--close {
+      background-image: url("../img/menu__close-button.png");
+    }
+    
+    
+    &--open {
+      background-image: url("../img/menu__open-button.png");  
+    }
+  }
+  
+  
+  &__list {
+    @include list-init;
+    background-color: $blue;
+    
+    &--opened {
+      
+    }
+    
+    
+    &--closed {
+      
+    }
+  }
+  
+  
+  &__item {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255,255,255,.2);
+    border-bottom: 1px solid rgba(1,1,1,.2);
+    
+    a {
+      display: block;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      color: $text-color--light;
+      font-family: $font-family;
+      font-size: $font-size--h2;
+      font-weight: $headings-weight;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    
+    &:first-child {
+      border-top: none;
+    }
+    
+    &:nth-last-child(2) {
+      border-bottom: none;
+      background-image: url("../img/menu-shadow.png");
+      background-repeat: repeat-x;
+      background-position: bottom;
+    }
+    
+    &--logo {
+      position: relative;
+      height: 56px;
+      overflow: visible;
+      border: none;
+      background-color: #fff;
+      
+      a {
+        padding: 0;        
+      }
+    }
+  }
+  
+  &__logo {
+    position: relative;
+    z-index: 1;
+    @include size(138px, 70px);
+  }
+}

@@ -1,0 +1,64 @@
+@mixin list-init {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin size($width: 0, $height: 0) {
+  width: $width;
+  height: $height;
+}
+
+@mixin transition ($what: all, $duration: .3s, $timing: ease-out) {
+  transition: $what $duration $timing;
+}
+
+@mixin translateXY ($x, $y) {
+  -webkit-transform: translate($x,$y);
+      -ms-transform: translate($x,$y);
+          transform: translate($x,$y);
+}
+
+@mixin translateX ($x) {
+  -webkit-transform: translateX($x);
+      -ms-transform: translateX($x);
+          transform: translateX($x);
+}
+
+@mixin translateY ($y) {
+  -webkit-transform: translateY($y);
+      -ms-transform: translateY($y);
+          transform: translateY($y);
+}
+
+@mixin centerV {
+  top: 50%;
+  @include translateY(-50%);
+}
+
+@mixin centerH {
+  left: 50%;
+  @include translateX(-50%);
+}
+
+@mixin centerHV {
+  top: 50%;
+  left: 50%;
+  @include translateXY(-50%, -50%);
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin generate_icon($parent, $element, $props, $size){
+  @each $object in $props {
+    .#{$parent}--#{$object} .#{$element}:before {
+      background-position: -(index($props, $object) - 1) * $size;
+    }
+  }
+}
