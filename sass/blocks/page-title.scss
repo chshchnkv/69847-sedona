@@ -3,6 +3,10 @@
   padding: 45px 20px;
   text-align: center;
   
+  &--inner {
+    padding: 80px 20px 20px;
+  }
+  
   h1 {
     margin-top: 0;
     margin-bottom: 35px;
@@ -19,19 +23,22 @@
     text-transform: $text-transform;
   }
   
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    
-    @include size(100%, 37px);
-    
-    background-color: $blue;
-    background-image: url("../img/page-title__bottom-mask.png");
-    background-position: center;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
+  &--masked {
+  
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+
+      @include size(100%, 37px);
+
+      background-color: $blue;
+      background-image: url("../img/page-title__bottom-mask.png");
+      background-position: center;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+    }
   }
 }

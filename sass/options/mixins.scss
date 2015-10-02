@@ -62,3 +62,8 @@
     }
   }
 }
+
+@mixin colors($bg: #fff, $text: $text-color) {
+  color: $text;
+  background-color: $bg;
+}

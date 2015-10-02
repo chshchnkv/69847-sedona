@@ -1,0 +1,143 @@
+.review-form-fields {
+  $margin-bottom: 20px;
+  $radio-border-size: 17px;
+  $radio-inner-size: 20px;
+  $radio-size: $radio-border-size*2 + $radio-inner-size;  
+
+  padding: 20px;
+  text-transform: $text-transform;
+
+  border: none;
+  border-top: 1px solid $grey--dark;
+  
+  
+  &__header {
+    margin-bottom: 30px;
+
+    font-size: $font-size--h2;
+    font-weight: $headings-weight;
+
+    text-align: center;
+  }
+
+  &__item {
+    margin-bottom: $margin-bottom;
+    
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      font-size: $font-size;
+    }
+    
+    input:not([type="submit"]) {
+      display: block;
+      width: 100%;
+      padding: 20px;
+
+      font-weight: bold;
+      font-size: $font-size--h2;
+
+      background-color: $grey--lighter;
+      border: none;
+
+
+      &[type="radio"],
+      &[type="checkbox"] {
+        display: none;
+
+        & + label {
+          position: relative;
+          margin-left: $radio-size;
+
+          font-size: $font-size--h2;
+          font-weight: $headings-weight;
+          text-transform: none;
+        }
+      }
+      
+      &[type="checkbox"] {
+        &+label:before {
+          content: "";
+          position: absolute;
+          left: -($radio-size);
+          
+          @include centerV;
+          
+          display: block;
+          @include size($radio-size, $radio-size);
+          
+          border-radius: 5px;
+          background-color: $grey--lighter;
+        }
+        
+        &:checked {
+          &+label:before {
+            background-image: url("../img/check-mark.png");
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+      
+      &[type="radio"] {
+        &+label:before {
+          content: "";
+          position: absolute;
+          left: -($radio-size);
+
+          @include centerV;
+
+          display: block;
+          @include size($radio-size, $radio-size);
+          background-color: $grey--lighter;
+
+          border: $radio-border-size solid $grey--lighter;
+          border-radius: 50%;
+        }
+
+
+        &:checked {
+          &+label:before {
+            background-color: $text-color;      
+          }
+        }
+      }
+    }
+
+    
+    &--radio, &--checkbox {
+      margin-bottom: $radio-size;
+    }
+
+    
+    &--spinner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .button--minus {
+        display: block;
+        width: 56px;
+        margin-right: 6px;
+      }
+
+      .button--plus {
+        display: block;
+        width: 56px;
+        margin-left: 6px;
+      }
+
+      input[type="text"] {
+        width: 50%!important; /* не нашел лучшего способа переопределить размер */
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+
+      label {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -26,8 +26,12 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      options: {
+              livereload: true,
+            },
+
       style: {
-        files: ['sass/**/*.scss'],
+        files: ['sass/**/*.scss', 'sass/*.scss'],
         tasks: ['sass', 'postcss'],
         options: {
           spawn: false,
@@ -40,4 +44,6 @@ module.exports = function(grunt) {
   config = require('./.gosha')(grunt, config);
 
   grunt.initConfig(config);
+  
+  grunt.loadNpmTasks('grunt-contrib-watch');
 };
