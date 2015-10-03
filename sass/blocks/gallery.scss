@@ -1,0 +1,48 @@
+.gallery {
+    
+  &__list {
+    @include list-init;
+    font-size: 0;
+  }
+  
+  &__item {
+    display: inline-block;
+    position: relative;
+
+    width: 70px;
+    margin-right: 35px;
+    margin-bottom: 35px;    
+  }
+  
+  &__photo {
+    display: block;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  &__remove-item-link {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    @include translateXY(-50%, -50%);
+    
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 50%;
+    background-color: $grey--lighter;
+    background-image: url("../img/delete.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    cursor: pointer;
+  }
+}

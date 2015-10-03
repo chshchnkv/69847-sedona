@@ -5,8 +5,12 @@
   padding-top: 50px;
   padding-bottom: 50px;
   
+  &--small {
+    padding-bottom: 80px;
+  }
+  
   background-image: url("../img/welcome__bg.jpg");
-  background-position: top;
+  background-position: center;
   background-size: cover;
   
   &__to-the-gorgeous {
@@ -17,8 +21,16 @@
   
   &__sedona {
     display: block;
+    width: 280px;
+    height: 48px;
     margin: 0 auto;
     margin-bottom: 65px;
+    
+    &--small {
+      margin: 0 auto;
+      width: 174px;
+      height: 30px;
+    }
   }
   
   &__grand-canyon-sucks {

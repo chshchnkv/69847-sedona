@@ -12,9 +12,7 @@
       <nav class="main-navigation">
         <a href="#" class="main-navigation__toggle  main-navigation__toggle--close"></a>
         <ul class="main-navigation__list  main-navigation__list--opened">
-          <li class="main-navigation__item">
-            <a href="#">Карта штата</a>
-          </li>
+          <li class="main-navigation__item"><a href="#">Карта штата</a></li>
           <li class="main-navigation__item"><a href="#">Информация</a></li>
           <li class="main-navigation__item"><a href="#">Фото и видео</a></li>
           <li class="main-navigation__item"><a href="#">Гостиницы</a></li>
@@ -27,102 +25,104 @@
     
      
     <main>
-      <div class="sedona">
-        <img src="img/sedona.png" alt="SEDONA" width="280" height="48">
+      <div class="welcome  welcome--small">
+        <img class="welcome__sedona  welcome__sedona--small" src="img/sedona.png" alt="SEDONA" width="280" height="48">
       </div>
       
-      <div class="page-title">
-        <h2>Оставьте свой отзыв</h2>
+      <div class="page-title  page-title--inner">
+        <h1>Оставьте свой отзыв</h1>
         <p>Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
       </div>
       
       
       <form action="#" class="review-form" method="post">
         
-        <fieldset class="review-form__item">
-          <legend>Представьтесь, пожалуйста:</legend>
+        <fieldset class="review-form-fields">
+          <header class="review-form-fields__header">Представьтесь, пожалуйста:</header>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item">
             <label for="nameLast">Фамилия:</label>
             <input type="text" id="nameLast" name="name-last" required>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item">
             <label for="nameFirst">Имя:</label>
             <input type="text" id="nameFirst" name="name-first" required>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item">
             <label for="nameMiddle">Отчество:</label>
             <input type="text" id="nameMiddle" name="name-middle">
           </div>
         </fieldset>
         
-        <fieldset class="review-form__item">
-          <legend>Ваше общее впечатление:</legend>
+        <fieldset class="review-form-fields">
+          <header class="review-form-fields__header">Ваше общее впечатление:</header>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item  review-form-fields__item--radio">
             <input type="radio" name="impression-positive" id="impressionPositive" checked>
             <label for="impressionPositive">Скорее положительное</label>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item">
             <input type="radio" name="impression-positive" id="impressionNegative">
             <label for="impressionNegative">Скорее отрицательное</label>
           </div>
         </fieldset>
         
-        <fieldset class="review-form__item">
-          <legend>Даты вашей поездки:</legend>
+        <fieldset class="review-form-fields">
+          <header class="review-form-fields__header">Даты вашей поездки:</header>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item">
             <label for="dateCheckIn">Дата приезда:</label>
             <input type="text" id="dateCheckIn" name="date-check-in" required>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item  review-form-fields__item--spinner">
             <label for="stayLength">Длительность пребывания:</label>
-            <a href="#" class="button  button--grey">-</a>
+            <span class="button  button--light-grey  button--minus"></span>
             <input type="text" name="stay-length" id="stayLength" required>
-            <a href="#" class="button  button--grey">+</a>
+            <span class="button  button--light-grey  button--plus"></span>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item">
             <label for="dateCheckOut">Дата отъзда:</label>
             <input type="text" id="dateCheckOut" name="date-check-out" required>
           </div>
         </fieldset>
         
-        <fieldset class="review-form__item">
-          <legend>Количество путешественников:</legend>
+        <fieldset class="review-form-fields">
+          <header class="review-form-fields__header">Количество путешественников:</header>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item  review-form-fields__item--spinner">
             <label for="numberOfTravelers">Количество путешественников:</label>
-            <a href="#" class="button  button--grey">-</a>
+            <span class="button  button--light-grey  button--minus"></span>
             <input type="text" name="number-of-travelers" id="numberOfTravelers" required>
-            <a href="#" class="button  button--grey">+</a>
+            <span class="button  button--light-grey  button--plus"></span>
           </div>
           
           <ul class="travelers">
             <li class="travelers__item">
               
-              <div class="review-form__field">
-                <label for="travelerIndex_1">№</label>
-                <input type="text" name="traveler-index-1" id="travelerIndex_1" value="1" readonly>
+              <div class="travelers__item-number">
+                <div class="review-form-fields__item  review-form-fields__item--number">
+                  <label for="travelerIndex_1">№</label>
+                  <input type="text" name="traveler-index-1" id="travelerIndex_1" value="1" readonly>
+                </div>
               </div>
               
-              <div class="travelers__item-info">
-                <div class="review-form__field">
+              <div class="travelers__fio">
+                <div class="review-form-fields__item">
                   <label for="nameLast_1">Фамилия:</label>
                   <input type="text" id="nameLast_1" name="name-last-1" required>
                 </div>
                 
-                <div class="review-form__field">
+                <div class="review-form-fields__item">
                   <label for="nameFirst_1">Имя:</label>
                   <input type="text" id="nameFirst_1" name="name-first-1" required>
                 </div>
                 
-                <div class="review-form__field">
+                <div class="review-form-fields__item">
                   <label for="nameMiddle_1">Отчество:</label>
                   <input type="text" id="nameMiddle_1" name="name-middle-1">
                 </div>
@@ -130,23 +130,25 @@
             </li>
             
             <li class="travelers__item">
-              <div class="review-form__field">
-                <label for="travelerIndex_2">№</label>
-                <input type="text" name="traveler-index-2" id="travelerIndex_2" value="2" readonly>
+              <div class="travelers__item-number">
+                <div class="review-form-fields__item  review-form-fields__item--number">
+                  <label for="travelerIndex_2">№</label>
+                  <input type="text" name="traveler-index-2" id="travelerIndex_2" value="2" readonly>
+                </div>
               </div>
               
-              <div class="travelers__item-info">
-                <div class="review-form__field">
+              <div class="travelers__fio">
+                <div class="review-form-fields__item">
                   <label for="nameLast_2">Фамилия:</label>
                   <input type="text" id="nameLast_2" name="name-last-2" required>
                 </div>
                 
-                <div class="review-form__field">
+                <div class="review-form-fields__item">
                   <label for="nameFirst_1">Имя:</label>
                   <input type="text" id="nameFirst_2" name="name-first-2" required>
                 </div>
                 
-                <div class="review-form__field">
+                <div class="review-form-fields__item">
                   <label for="nameMiddle_1">Отчество:</label>
                   <input type="text" id="nameMiddle_2" name="name-middle-2">
                 </div>
@@ -155,51 +157,88 @@
           </ul>
         </fieldset>
         
-        <fieldset class="review-form__item">
-          <legend>Посещённые достопримечательности:</legend>
+        <fieldset class="review-form-fields">
+          <header class="review-form-fields__header">Посещённые достопримечательности:</header>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item  review-form-fields__item--checkbox">
             <input type="checkbox" id="sightseeing_1" name="sightseeing-1" checked>
             <label for="sightseeing_1">Мост Дьявола</label>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item  review-form-fields__item--checkbox">
             <input type="checkbox" id="sightseeing_2" name="sightseeing-2">
             <label for="sightseeing_2">Слайд-парк</label>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item  review-form-fields__item--checkbox">
             <input type="checkbox" id="sightseeing_3" name="sightseeing-3" checked>
             <label for="sightseeing_3">Гора-Колокол</label>
           </div>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item  review-form-fields__item--checkbox">
             <input type="checkbox" id="sightseeing_4" name="sightseeing-4" checked>
             <label for="sightseeing_4">Красные скалы</label>
           </div>
         </fieldset>
         
-        <fieldset class="review-form__item">
-          <legend>Загрузить фотографии:</legend>
+        <fieldset class="review-form-fields">
+          <header class="review-form-fields__header">Загрузить фотографии:</header>
           
-          <div class="review-form__field">
+          <div class="review-form-fields__item">
             <input type="file">
           </div>
           
           <div class="gallery">
             <ul class="gallery__list">
-              <li class="gallery__item"><img src="#" alt=""><a href="#" class="gallery__remove-item-link"></a></li>
-              <li class="gallery__item"><img src="#" alt=""><a href="#" class="gallery__remove-item-link"></a></li>
-              <li class="gallery__item"><img src="#" alt=""><a href="#" class="gallery__remove-item-link"></a></li>
-              <li class="gallery__item"><img src="#" alt=""><a href="#" class="gallery__remove-item-link"></a></li>
-              <li class="gallery__item"><img src="#" alt=""><a href="#" class="gallery__remove-item-link"></a></li>
-              <li class="gallery__item"><img src="#" alt=""><a href="#" class="gallery__remove-item-link"></a></li>
-              <li class="gallery__item"><img src="#" alt=""><a href="#" class="gallery__remove-item-link"></a></li>
+              <li class="gallery__item">
+                <div class="gallery__photo">
+                  <img src="img/gallery__photo-1.jpg" alt="" width="280" height="280">
+                </div>
+                <span class="gallery__remove-item-link"></span>
+              </li>
+              <li class="gallery__item">
+                <div class="gallery__photo">
+                  <img src="img/gallery__photo-2.jpg" alt="" width="280" height="280">
+                </div>
+                <span class="gallery__remove-item-link"></span>
+              </li>
+              <li class="gallery__item">
+                <div class="gallery__photo">
+                  <img src="img/gallery__photo-3.jpg" alt="" width="140" height="140">
+                </div>
+                <span class="gallery__remove-item-link"></span>
+              </li>
+              <li class="gallery__item">
+                <div class="gallery__photo">
+                  <img src="img/gallery__photo-4.jpg" alt="" width="280" height="280">
+                </div>
+                <span class="gallery__remove-item-link"></span>
+              </li>
+              <li class="gallery__item">
+                <div class="gallery__photo">
+                  <img src="img/gallery__photo-5.jpg" alt="" width="70" height="70">
+                </div>
+                <span class="gallery__remove-item-link"></span>
+              </li>
+              <li class="gallery__item">
+                <div class="gallery__photo">
+                  <img src="img/gallery__photo-6.jpg" alt="" width="280" height="280">
+                </div>
+                <span class="gallery__remove-item-link"></span>
+              </li>
+              <li class="gallery__item">
+                <div class="gallery__photo">
+                  <img src="img/gallery__photo-6.jpg" alt="" width="280" height="280">
+                </div>
+                <span class="gallery__remove-item-link"></span>
+              </li>
             </ul>
           </div>
         </fieldset>
         
-        <input type="submit" class="button  button--blue" value="Отправить отзыв">
+        <div class="review-form__submit">
+          <input type="submit" class="button  button--blue" value="Отправить отзыв">
+        </div>
         
       </form>
     </main>
