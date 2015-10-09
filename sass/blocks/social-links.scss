@@ -1,6 +1,7 @@
 .social-links {
   @include list-init;
-  font-size: 0;
+  display: flex;
+  justify-content: center;
   
   &__item {
     display: inline-block;

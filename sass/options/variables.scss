@@ -1,4 +1,5 @@
 $blue: #81b3d2;
+$light: #fff;
 $grey: #b8b8b8;
 $grey--light: #eee;
 $grey--lighter: #f2f2f2;
@@ -13,6 +14,7 @@ $html-size-base: 10px;
 $font-size: 1.4rem;
 $line-height: 1.5;
 
+$font-size-giant: 3rem;
 $font-size--h1: 2.1rem;
 $font-size--h2: 1.8rem;
 $font-size--h3: 1.6rem;
@@ -26,3 +28,6 @@ $headings-line-height: 26/18;
 $text-transform: uppercase;
 $facilities-icon-size: 40px;
 $facilities: (hotel, souvenirs, food);
+
+$screen_mobile: 320px;
+$screen_tablet: 760px;

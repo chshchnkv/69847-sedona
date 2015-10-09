@@ -17,6 +17,8 @@
     background-position: center;
     background-repeat: no-repeat;
     
+    cursor: pointer;
+    
     &--close {
       background-image: url("../img/menu__close-button.png");
     }
@@ -25,12 +27,24 @@
     &--open {
       background-image: url("../img/menu__open-button.png");  
     }
+    
+    @media (min-width: $screen_tablet) {
+      display: none;
+    }
   }
   
   
   &__list {
     @include list-init;
-    background-color: $blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @include colors($blue, $text-color--light);
+    
+    @media (min-width: $screen_tablet) {
+      @include colors($light, $text-color);
+    }
     
     &--opened {
       
@@ -40,48 +54,89 @@
     &--closed {
       
     }
+    
+    @media (min-width: $screen_tablet) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
   }
   
   
   &__item {
     margin: 0;
     padding: 0;
-    border-top: 1px solid rgba(255,255,255,.2);
-    border-bottom: 1px solid rgba(1,1,1,.2);
     
     a {
       display: block;
       padding-top: 20px;
       padding-bottom: 20px;
-      color: $text-color--light;
       font-family: $font-family;
       font-size: $font-size--h2;
       font-weight: $headings-weight;
+      color: $text-color--light;
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
+      
+      @media (min-width: $screen_tablet) {
+        color: $text-color;
+      }
     }
     
+    // показываем границы до размера планшета
+    border-top: 1px solid rgba(255,255,255,.2);
+    border-bottom: 1px solid rgba(1,1,1,.2);
+    
+    @media (min-width: $screen_tablet) {
+      border: none;
+    }
+
     &:first-child {
       border-top: none;
     }
-    
-    &:nth-last-child(2) {
+
+    &:nth-last-child(1) {
       border-bottom: none;
       background-image: url("../img/menu-shadow.png");
       background-repeat: repeat-x;
       background-position: bottom;
+      
+      @media (min-width: $screen_tablet) {
+        background: none;
+      }
     }
     
     &--logo {
       position: relative;
-      height: 56px;
-      overflow: visible;
+      order: 3;
+
+      overflow: visible;      
       border: none;
       background-color: #fff;
       
       a {
-        padding: 0;        
+        position: relative;
+        z-index: 1;
+        padding: 0;
+        font-size: 0; // не знаю что за хак такой пришлось сделать
+        
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          @include centerH;
+          display: block;
+          
+          @include size(138px, 70px);
+          
+          background-image: url("../img/form-logo-triangle.svg");
+          background-repeat: no-repeat;
+          background-size: auto;
+        }
+      }
+      
+      @media (min-width: $screen_tablet) {
+        order: 0;
       }
     }
   }
@@ -89,6 +144,6 @@
   &__logo {
     position: relative;
     z-index: 1;
-    @include size(138px, 70px);
+    @include size(67px, 56px);
   }
 }

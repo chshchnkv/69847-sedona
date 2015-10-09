@@ -1,0 +1,40 @@
+.checkbox {
+  
+  margin-bottom: $radio-size;
+  
+  input[type="checkbox"] {
+    display: none;
+
+    & + label {
+      position: relative;
+      margin-left: $radio-size;
+      padding-left: $radio-size / 4;
+
+      font-size: $font-size--h2;
+      font-weight: $headings-weight;
+      text-transform: none;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        left: -($radio-size);
+
+        @include centerV;
+
+        display: block;
+        @include size($radio-size, $radio-size);
+
+        border-radius: 5px;
+        background-color: $grey--lighter;
+      }      
+    }
+    
+    &:checked {
+      &+label:before {
+        background-image: url("../img/check-mark.png");
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

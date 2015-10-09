@@ -1,4 +1,15 @@
 .features {
+  display: flex;
+  flex-direction: column;
+  
+  @media (min-width: $screen_tablet) {
+    flex-direction: row;
+    
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
@@ -9,22 +20,45 @@
   background-color: $blue;
   
   &__item {
-    padding: 45px 20px;
+    min-height: 256px;
+    
+    &--text {
+      padding: 45px 20px;
+      
+      @media (min-width: $screen_tablet) {
+        width: 256px;
+        flex-shrink: 0;
+      }
+    }
     
     &--photo {
-      margin: 0;
-      padding: 0;
-      max-height: 256px;
-      
+      position: relative;
       overflow: hidden;
+            
+      text-align: center;
       
       & img {
-        position: relative;
-        top: 0;
-        display: block;
+        position: absolute;
+        @include centerHV;
         
-        @include size(100%, auto);
-        @include centerH;
+        width: auto;
+        height: auto;
+      }
+      
+//      & img {
+//        position: absolute;
+//        top: -999px;
+//        left: -999px;
+//        right: -999px;
+//        bottom: -999px;
+//
+//        width: auto;
+//        height: 100%;
+//        margin: auto;        
+//      }
+
+      @media (min-width: $screen_tablet) {
+        flex-grow: 1;
       }
     }
   }
@@ -33,6 +67,10 @@
     margin-top: 0;
     font-size: $font-size--h2;
     line-height: $headings-line-height;
+    
+    @media (min-width: $screen_tablet) {
+      font-size: $font-size--h1;
+    }
   }
   
   &__number {

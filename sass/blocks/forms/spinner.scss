@@ -1,0 +1,47 @@
+.spinner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  margin-bottom: $margin-bottom;
+
+  .button--minus {
+    display: block;
+    width: 56px;
+  }
+
+  .button--plus {
+    display: block;
+    width: 56px;
+  }
+
+  input[type="text"] {
+    @include input;
+    width: 56px;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    margin: 0 6px;
+
+    @media (min-width: $screen_tablet) {          
+      flex-grow: 0;
+
+      margin: 0;
+      padding: $offset ($offset / 2);
+
+      text-align: center;
+    }
+    
+    ~ label {
+      @include label;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: $screen_tablet) {
+    justify-content: center;
+  }
+}

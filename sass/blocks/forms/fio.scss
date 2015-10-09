@@ -1,0 +1,10 @@
+.fio {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  @media (min-width: $screen_tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }  
+}
