@@ -56,5 +56,11 @@
         font-size: $font-size-giant;
       }
     }
-  }  
+  }
+  
+  &--blog {
+    h1 {
+      font-size: $font-size-giant;
+    }
+  }
 }
