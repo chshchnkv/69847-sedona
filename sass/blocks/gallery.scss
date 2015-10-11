@@ -1,5 +1,8 @@
+$gallery-item-size: 70px;
+$gallery-delete-btn-size: $gallery-item-size / 2 - 5px;
+
 .gallery {
-    
+
   &__list {
     @include list-init;
     font-size: 0;
@@ -9,17 +12,36 @@
     display: inline-block;
     position: relative;
 
-    width: 70px;
-    margin-right: 35px;
-    margin-bottom: 35px;    
+    width: $gallery-item-size;
+    
+    margin-right: $gallery-item-size / 2;
+    margin-bottom: $gallery-item-size / 2;
+    
+    font-size: $font-size;
+    
+    p {
+      margin-bottom: 0;
+    }
+    
+    @media (min-width: $screen_tablet) {
+      width: $gallery-item-size * 2;
+      
+      margin-right: $gallery-item-size;
+      margin-bottom: $gallery-item-size;
+    }
   }
   
   &__photo {
     display: block;
-    width: 70px;
-    height: 70px;
+    
+    @include size($gallery-item-size, $gallery-item-size);
+    
     overflow: hidden;
 
+    @media (min-width: $screen_tablet) {
+      @include size($gallery-item-size*2, $gallery-item-size*2);
+    }
+    
     img {
       display: block;
       width: 100%;
@@ -34,8 +56,8 @@
     @include translateXY(-50%, -50%);
     
     display: block;
-    width: 30px;
-    height: 30px;
+    
+    @include size($gallery-delete-btn-size, $gallery-delete-btn-size);
     
     border-radius: 50%;
     background-color: $grey--lighter;
@@ -44,5 +66,15 @@
     background-repeat: no-repeat;
     
     cursor: pointer;
+    
+    @media (min-width: $screen_tablet) {
+      
+      top: 0;
+      right: 0;
+      
+      @include translateXY(50%, -50%);
+      
+      @include size($gallery-delete-btn-size*2, $gallery-delete-btn-size*2);
+    }
   }
 }

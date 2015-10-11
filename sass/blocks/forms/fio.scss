@@ -1,10 +1,41 @@
 .fio {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-
+  
+  width: 100%;
+  
+  &__item {    
+    margin-bottom: $margin-bottom;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    @media (min-width: $screen_tablet) {      
+      width: 30%;
+      
+      margin-bottom: 0;
+    }
+  }
+  
   @media (min-width: $screen_tablet) {
     flex-direction: row;
     justify-content: space-between;
-  }  
+  }
+  
+  &--multiple {
+    
+    .fio__item {
+      @media (min-width: $screen_tablet) {
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin-right: 6px;
+        
+      }      
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }

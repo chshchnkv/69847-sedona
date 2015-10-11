@@ -21,6 +21,27 @@
   &--travelers {
     @media (min-width: $screen_tablet) {
       flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  &--impressions {
+    @media (min-width: $screen_tablet) {
+      padding-top: 70px;
+      padding-bottom: 80px - $radio-size;
+    }
+  }
+  
+  &--sightseeing {
+    @media (min-width: $screen_tablet) {
+      padding-top: 70px;
+      padding-bottom: 80px - $radio-size;      
+    }
+  }
+  
+  &--gallery {
+    @media (min-width: $screen_tablet) {
+      padding-bottom: 0;
     }
   }
   
@@ -39,6 +60,8 @@
       @include translateXY(-50%, -50%);
       
       width: 400px;
+      
+      padding: 0 40px;
             
       background-color: $light;
     }

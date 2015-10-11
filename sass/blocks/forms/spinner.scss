@@ -9,28 +9,25 @@
 
   .button--minus {
     display: block;
-    width: 56px;
+    width: $input-min-width;
   }
 
   .button--plus {
     display: block;
-    width: 56px;
+    width: $input-min-width;
   }
 
   input[type="text"] {
     @include input;
-    width: 56px;
+    width: $input-min-width;
 
     flex-grow: 1;
     flex-shrink: 1;
 
     margin: 0 6px;
 
-    @media (min-width: $screen_tablet) {          
-      flex-grow: 0;
-
+    @media (min-width: $screen_tablet) {
       margin: 0;
-      padding: $offset ($offset / 2);
 
       text-align: center;
     }
@@ -43,5 +40,11 @@
 
   @media (min-width: $screen_tablet) {
     justify-content: center;
+  }
+  
+  &--small {
+    @media (min-width: $screen_tablet) {
+      width: 30%;
+    }
   }
 }

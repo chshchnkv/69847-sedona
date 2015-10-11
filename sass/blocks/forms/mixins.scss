@@ -1,4 +1,7 @@
 @mixin input ($bg-color: $grey--lighter, $text: $text-color) {
+  display: block;
+  width: 100%;
+  
   padding: $offset;
 
   font-weight: bold;
