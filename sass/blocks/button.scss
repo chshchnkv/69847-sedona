@@ -1,15 +1,20 @@
+$padding-v: 10px;
+$padding-h: 15px;
+
+
 .button {
   display: inline-block;
   vertical-align: top;
   max-width: 100%;
-  padding: 10px 15px;
+  padding: $padding-v $padding-h;
   font-family: $font-family;
   font-size: $font-size;
   font-weight: 700;
   line-height: $line-height;
   
+  text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: $text-transform;
   word-wrap: break-word;
   
   @include colors($grey--light, $text-color);
@@ -41,5 +46,14 @@
     background-image: url("../img/plus.png");
     background-position: center;
     background-repeat: no-repeat;
+  }
+  
+  &--white {
+    border: 2px solid $blue;
+    @include colors($text-color--light, $text-color);
+  }
+  
+  &--big {    
+    font-size: $font-size--h1;
   }
 }

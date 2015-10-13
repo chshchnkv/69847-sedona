@@ -31,13 +31,13 @@
         <img class="welcome__text-sedona  welcome__text-sedona--small" src="img/text-sedona.svg" alt="Sedona" width="460" height="80">
       </div>
       
-      <section class="seriff-blog">
+      <section class="page-title  page-title--inner  page-title--blog">
         <h1>Блог шерифа</h1>
         <p>Седона удивительный город! Горы здесь красного цвета, а местный шериф ведет блог и общается на форумах.</p>
       </section>
       
-      <article class="post">
-        <div class="post__meta">
+      <article class="post-single">
+        <div class="post__meta  post__meta--single">
           <a href="#" class="post__date">Позавчера</a><a href="#" class="post__category">Происшествия</a>
         </div>
         
@@ -60,7 +60,7 @@
           <h2>Предостережение</h2>
           <p>Не пытайтесь убить змею, если увидите! Помните, что она тоже живое существо, хоть и выглядит не очень приятно. Вот цитата, которая мне очень нравится:</p>
           <blockquote class="quote">
-            <p>Самый свирепый из зверей — теперь мы знаем — это человек, он убивает даже если не голоден.</p>
+            Самый свирепый из зверей — теперь мы знаем — это человек, он убивает даже если не голоден.
             <footer>
               <cite>Адриано Челентано</cite>
             </footer>
@@ -69,21 +69,9 @@
       </article>
       
       <div class="blog-navigation">
-        <div class="row">
-          <div class="span_6 col">
-            <a href="#" class="blog-navigation__link" rel="prev">Пред.</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span_6 col">
-            <a href="#" class="blog-navigation__link" rel="next">След.</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span_12 col">
-            <a href="blog.html" class="blog-navigation__link">Назад к списку</a>
-          </div>
-        </div>
+        <a href="#" class="blog-navigation__back  button  button--big  button--white" rel="prev">Пред.<span class="mobile-hide-text"> пост</span></a>
+        <a href="blog.html" class="blog-navigation__content  button  button--big  button--white">Назад к списку</a>
+        <a href="#" class="blog-navigation__next  button  button--big  button--white" rel="next">След.<span class="mobile-hide-text"> пост</span></a>
       </div>
     </main>
     

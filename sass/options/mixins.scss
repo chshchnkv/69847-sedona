@@ -2,6 +2,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  
+  li {
+    padding: 0;
+    
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
 }
 
 @mixin size($width: 0, $height: 0) {
