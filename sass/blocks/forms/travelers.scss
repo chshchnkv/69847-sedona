@@ -3,7 +3,7 @@
   
   &__item {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: $margin-bottom * 2;
     
     &:last-child {
       margin-bottom: 0;
@@ -11,14 +11,9 @@
   }
 
   &__item-number {
-    width: 56px;
+    width: $input-min-width;
     flex-grow: 0;
     flex-shrink: 0;
     margin-right: 6px;
-  }
-  
-  &__fio {
-    flex-grow: 1;
-    flex-shrink: 1;
   }
 }

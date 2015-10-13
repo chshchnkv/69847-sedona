@@ -1,0 +1,47 @@
+.pagination {
+  
+  padding: 45px 20px;
+  
+  border-bottom: 2px solid $borders;
+  
+  &__list {
+    @include list-init;
+
+    display: flex;
+    flex-direction: row;  
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-right: 16px;
+    margin-bottom: 16px;
+    
+    a {
+      display: block;
+      
+      padding: (5.8rem - $font-size--h1)/2 20px;
+                  
+      @include colors($blue, $text-color--light);
+      
+      font-size: $font-size--h1;
+      line-height: 1;
+      font-weight: $headings-weight;
+      text-decoration: none;
+      text-transform: $text-transform;
+      text-align: center;
+    }
+    
+    &--active {
+      
+      a {
+        @include colors($page-active, $text-color);
+      }
+    }
+  }
+}

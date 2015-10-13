@@ -1,0 +1,100 @@
+$blog-meta-icon-size: 11px;
+
+.posts {
+  padding: 0 20px;
+  
+  border-bottom: 2px solid $borders;
+}
+
+.post {
+  padding: 40px 0;
+  
+  text-align: center;
+  border-top: 2px solid $borders;
+  
+  &__header {
+    a {
+      display: block;
+      
+      color: $text-color;
+      text-decoration: none;
+    }
+    
+    h2 {
+      margin: 0;      
+      padding: 0;
+      
+      font-size: $font-size--h1;
+      text-transform: $text-transform;
+      line-height: $headings-line-height;
+    }
+  }
+  
+  &__content {
+    p {
+      margin: 30px 0;
+      padding: 0;
+      
+      font-size: $font-size;
+      text-transform: $text-transform;
+      line-height: $line-height;      
+    }
+  }
+  
+  &__meta {
+    font-size: $font-size;
+    line-height: 1;
+    text-transform: $text-transform;
+    text-align: left;
+    font-style: italic;
+    
+    a {
+      padding-left: $blog-meta-icon-size + 10;
+      
+      color: $text-meta;
+      text-decoration: none;
+    }
+  }
+  
+  &__date {
+    position: relative;
+    
+    margin-right: 50px;
+    
+    &:before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include centerV;
+
+      display: block;
+      @include size($blog-meta-icon-size, $blog-meta-icon-size);
+
+      background-image: url("../img/blog-calendar.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  
+  &__category {
+    position: relative;
+    
+    &:before {
+      content: "";
+      
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include centerV;
+      
+      display: block;
+      @include size($blog-meta-icon-size, $blog-meta-icon-size);
+      
+      background-image: url("../img/blog-flag.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}

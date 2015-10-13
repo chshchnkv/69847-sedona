@@ -1,4 +1,31 @@
+@mixin facility-icon($icon) {
+  content: "";
+  position: absolute;
+  
+  top: 20px;
+  left: 20px;
+
+  display: block;
+  width: 40px;
+  height: 40px;  
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;      
+  background-image: url("../img/icon-#{$icon}.svg");
+
+  @media (min-width: $screen_tablet) {
+    top: 60px;
+    @include centerH;
+    width: 75px;
+    height: 75px;
+  }
+}
+
 .facilities {
+  display: flex;
+  flex-direction: column;
+  
   font-size: $font-size;
   text-transform: $text-transform;
   text-align: left;
@@ -7,25 +34,36 @@
   &__item {
     position: relative;
     padding: 30px 20px 30px 70px;
+        
+    &--house:before {
+      @include facility-icon("house");
+    }
+
+    &--souvenirs:before {
+      @include facility-icon("gift");
+    }
+
+    &--food:before {
+      @include facility-icon("burger");
+    }
+    
+    @media (min-width: $screen_tablet) {
+      padding: 165px 45px 60px;
+      
+      &--souvenirs {
+        order: 3;
+      }
+    }
   }
   
   &__header {
     position: relative;
     margin-top: 0;
     font-size: $font-size--h2;
-
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: -($facilities-icon-size + 10px);
-      @include size($facilities-icon-size, $facilities-icon-size);
-      @include centerV;
-      background-image: url("../img/facilities-sprite.png");
-      background-size: auto $facilities-icon-size;
-      background-repeat: no-repeat;
-    }
+  }
+  
+  @media (min-width: $screen_tablet) {
+    flex-direction: row;
+    text-align: center;
   }
 }
-
-@include generate_icon(facilities__item, facilities__header, $facilities, $facilities-icon-size);

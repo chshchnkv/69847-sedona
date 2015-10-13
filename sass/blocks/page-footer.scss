@@ -1,8 +1,13 @@
 .page-footer {
+  display: flex;
+  flex-direction: column;
   
   &__hashtag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     padding: 30px 20px;
-    text-align: center;
   }
   
   &__social {
@@ -11,7 +16,16 @@
   }
   
   &__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
     padding: 30px 20px;
     text-align: center;
+  }
+  
+  @media (min-width: $screen_tablet) {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }

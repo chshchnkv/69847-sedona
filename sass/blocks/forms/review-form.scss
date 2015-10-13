@@ -1,0 +1,21 @@
+.review-form {
+  
+  margin-bottom: 100px;
+  
+  &__submit {
+    margin: 0 20px;
+    
+    @media (min-width: $screen_tablet) {
+      margin: 0 12.5%;
+    }
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    font-size: $font-size--h1;
+  }
+  
+  @media (min-width: $screen_tablet) {
+    padding: 0 60px;
+  }
+}

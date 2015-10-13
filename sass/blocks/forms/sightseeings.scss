@@ -1,0 +1,27 @@
+.sightseeings {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  margin-bottom: $margin-bottom;
+  
+  @media (min-width: $screen_tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    margin-bottom: 0;
+    
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
+  
+  &__item {
+    
+    &:last-child {
+      .checkbox:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

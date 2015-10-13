@@ -1,26 +1,3 @@
 @import "lib/normalize";
-
-@import "options/fonts";
-@import "options/variables";
-@import "options/mixins";
-
-@import "blocks/button";
-@import "blocks/page";
-@import "blocks/page-header";
-@import "blocks/main-navigation";
-@import "blocks/welcome";
-@import "blocks/page-title";
-@import "blocks/features";
-@import "blocks/facilities";
-@import "blocks/advantages";
-@import "blocks/hotel-search";
-@import "blocks/map";
-@import "blocks/hashtag";
-@import "blocks/social-links";
-@import "blocks/page-footer";
-@import "blocks/copyright";
-
-@import "blocks/review-form.scss";
-@import "blocks/review-form-fields.scss";
-@import "blocks/travelers.scss";
-@import "blocks/gallery.scss";
+@import "options/module";
+@import "blocks/module";

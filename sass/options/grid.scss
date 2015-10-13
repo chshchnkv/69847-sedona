@@ -1,0 +1,90 @@
+@mixin col {
+  border: 0px solid rgba(0,0,0,0);
+  float: left;
+  box-sizing: border-box;
+  background-clip: padding-box !important;
+}
+
+.col {
+  @include col;
+}
+
+@mixin span($num, $gutter_pc, $gutter_px, $padding, $max_columns) {
+  $one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
+  width: ($one_col * $num) + ($gutter_pc * ($num - 1));
+  border-left-width: $gutter_px;
+  padding: $padding;
+  margin-left: $gutter_pc;
+}
+
+@mixin span_first {
+  margin-left:0;
+}
+    
+@media (min-width: 0px) {
+  
+  .row {
+    margin-left:-20px;
+    @include clearfix;
+  }
+
+  .col {
+    border-left-width:20px;
+    padding:0 0px;
+  }
+
+  $max_columns: 12;
+  $padding: 0 0px;
+  $gutter_px: 20px;
+  $gutter_pc: 0;
+
+  .span-1 {
+    @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-2 {
+    @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  
+  .span-3 {
+    @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-4 {
+    @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-5 {
+    @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-6 {
+    @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-7 {
+    @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-8 {
+    @include span(8, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-9 {
+    @include span(9, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-10 {
+    @include span(10, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-11 {
+    @include span(11, $gutter_pc, $gutter_px, $padding, $max_columns);
+  }
+  
+  .span-12 {
+    @include span_first;
+    width:100%;
+  }
+}

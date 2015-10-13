@@ -1,11 +1,16 @@
 $blue: #81b3d2;
+$light: #fff;
 $grey: #b8b8b8;
 $grey--light: #eee;
 $grey--lighter: #f2f2f2;
 $grey--dark: #d6d6d6;
+$borders: #dbdbdb;
 
 $text-color: #333;
 $text-color--light: #fff;
+$text-meta: #999;
+
+$page-active: #e5e5e5;
 
 $font-family: "PT Sans", Arial, sans-serif;
 
@@ -13,6 +18,7 @@ $html-size-base: 10px;
 $font-size: 1.4rem;
 $line-height: 1.5;
 
+$font-size-giant: 3rem;
 $font-size--h1: 2.1rem;
 $font-size--h2: 1.8rem;
 $font-size--h3: 1.6rem;
@@ -21,8 +27,11 @@ $font-size--h5: $font-size;
 $font-size--h6: $font-size;
 
 $headings-weight: bold;
-$headings-line-height: 26/18;
+$headings-line-height: 26px;
 
 $text-transform: uppercase;
 $facilities-icon-size: 40px;
 $facilities: (hotel, souvenirs, food);
+
+$screen_mobile: 320px;
+$screen_tablet: 760px;

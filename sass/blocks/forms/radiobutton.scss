@@ -1,0 +1,45 @@
+$radio-border-size: 15px;
+$radio-inner-size: 20px;
+$radio-size: $radio-border-size*2 + $radio-inner-size;
+
+
+.radiobutton {
+  
+  margin-bottom: $radio-size;
+
+  input[type="radio"] {
+    
+    display: none;
+
+    & + label {
+      position: relative;
+      margin-left: $radio-size;
+      padding-left: $radio-size / 4;
+
+      font-size: $font-size--h2;
+      font-weight: $headings-weight;
+      text-transform: none;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        left: -($radio-size);
+
+        @include centerV;
+
+        display: block;
+        @include size($radio-size, $radio-size);
+        background-color: $grey--lighter;
+
+        border: $radio-border-size solid $grey--lighter;
+        border-radius: 50%;
+      }
+    }
+    
+    &:checked {
+      &+label:before {
+        background-color: $text-color;      
+      }
+    }
+  }
+}

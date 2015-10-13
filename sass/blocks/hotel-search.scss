@@ -9,6 +9,10 @@
     margin-top: 0;
     margin-bottom: 30px;
     font-size: $font-size--h1;
+    
+    @media (min-width: $screen_tablet) {
+      font-size: $font-size-giant;
+    }
   }
   
   &__text {
@@ -21,5 +25,9 @@
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: $font-size--h1;
+  }
+  
+  @media (min-width: $screen_tablet) {
+    padding: 60px 155px;
   }
 }
