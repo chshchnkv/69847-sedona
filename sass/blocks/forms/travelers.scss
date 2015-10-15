@@ -3,17 +3,93 @@
   
   &__item {
     display: flex;
+    flex-wrap: wrap;
+        
     margin-bottom: $margin-bottom * 2;
     
     &:last-child {
       margin-bottom: 0;
     }
+    
+    @media (min-width: $screen_desktop) {
+      justify-content: space-between;
+    }
+  }
+  
+  &__id {
+    display: flex;
+    width: 100%;
+    
+    margin-bottom: $margin-bottom;
+
+    
+    @media (min-width: $screen_tablet) {
+      flex-basis: $travelers-item-basis-tablet + $travelers-item-margin + $input-min-width;
+      flex-grow: 1;
+      
+      margin-bottom: 0;
+      margin-right: 6px;
+    }
+
+    @media (min-width: $screen_desktop) {
+      flex-basis: 30%;
+      flex-grow: 0;
+      
+      margin-right: 0;
+    }
   }
 
-  &__item-number {
+  &__number {
     width: $input-min-width;
     flex-grow: 0;
     flex-shrink: 0;
     margin-right: 6px;
+  }
+  
+  &__last-name {
+    flex-basis: $input-min-width;
+    flex-grow: 1;
+    
+    @media (min-width: $screen_tablet) {
+      flex-basis: $travelers-item-basis-tablet;
+    }
+  }
+  
+  &__first-name {
+    width: 100%;
+    
+    margin-left: $input-min-width + 6px;
+    margin-bottom: $margin-bottom;
+    
+    @media (min-width: $screen_tablet) {
+      flex-basis: $travelers-item-basis-tablet;
+      flex-grow: 1;
+      margin-left: 0;
+      margin-bottom: 0;
+      margin-right: 6px;
+    }
+
+    @media (min-width: $screen_desktop) {
+      flex-basis: 30%;
+      flex-grow: 0;
+      margin-right: 0;
+    }
+  }
+  
+  &__middle-name {
+    width: 100%;
+    margin-left: $input-min-width + 6px;
+
+    @media (min-width: $screen_tablet) {
+      flex-basis: $travelers-item-basis-tablet;
+      flex-grow: 1;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      flex-grow: 0;
+      flex-basis: 30%;
+    }
   }
 }

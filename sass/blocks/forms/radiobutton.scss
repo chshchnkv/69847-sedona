@@ -33,12 +33,30 @@ $radio-size: $radio-border-size*2 + $radio-inner-size;
 
         border: $radio-border-size solid $grey--lighter;
         border-radius: 50%;
+        
+        @include transition;
+      }
+      
+      &:hover:before {
+        background-color: darken($grey--lighter, 5%);
+        border-color: darken($grey--lighter, 5%);
+      }
+      
+      &:active:before {
+        background-color: darken($grey--lighter, 11%);
+        border-color: darken($grey--lighter, 11%);
       }
     }
     
     &:checked {
-      &+label:before {
-        background-color: $text-color;      
+      &+label {
+        &:before {
+          background-color: $text-color;      
+        }
+        
+        &:active:before {
+          background-color: transparentize($text-color, .7);
+        }
       }
     }
   }

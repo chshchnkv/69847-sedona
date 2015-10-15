@@ -66,38 +66,7 @@ $gallery-delete-btn-size: $gallery-item-size / 2 - 5px;
     
     border-radius: 50%;
     
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      
-      display: block;
-      
-      @include size(100%,100%);
-      background-image: url("../img/icon-delete.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 12px;
-      
-      opacity: .3;
-      
-      @media (min-width: $screen_tablet) {
-        background-size: 24px;
-      }
-    }
-    
-    &:hover {
-      &:after {
-        opacity: .5;
-      }
-    }
-    
-    &:active {
-      &:after {
-        opacity: .1;
-      }
-    }
+    @include iconed-button("../img/icon-delete.svg", 12px, 12px, double);
     
     @media (min-width: $screen_tablet) {      
       top: 0;

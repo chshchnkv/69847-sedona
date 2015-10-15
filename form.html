@@ -11,19 +11,20 @@
     <div class="container">
       <header class="page-header">
         <nav class="main-navigation">
-          <a href="#" class="main-navigation__toggle  main-navigation__toggle--close"></a>
+          <span class="main-navigation__toggle  main-navigation__toggle--close"></span>
           <ul class="main-navigation__list  main-navigation__list--opened">
-            <li class="main-navigation__item"><a href="#">Карта штата</a></li>
-            <li class="main-navigation__item"><a href="#">Информация</a></li>
+            <li class="main-navigation__item  main-navigation__item--state-map"><a href="#">Карта штата</a></li>
+            <li class="main-navigation__item  main-navigation__item--info"><a href="#">Информация</a></li>
             <li class="main-navigation__item main-navigation__item--logo">
-              <a href="index.html"><img class="main-navigation__logo" src="img/logo-sedona@1x.png" alt="City of Sedona" width="67" height="56"></a>
+              <a href="index.html">
+                <img class="main-navigation__logo" src="img/logo-sedona@1x.png" srcset="img/logo-sedona@2x.png 2x, img/logo-sedona@3x.png 3x" alt="City of Sedona" width="67" height="56">
+              </a>
             </li>
-            <li class="main-navigation__item"><a href="#">Фото и видео</a></li>
-            <li class="main-navigation__item"><a href="#">Гостиницы</a></li>
+            <li class="main-navigation__item  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
+            <li class="main-navigation__item  main-navigation__item--hotels"><a href="#">Гостиницы</a></li>
           </ul>
         </nav>
-      </header>
-      
+      </header>      
        
       <main>
         <div class="welcome  welcome--small">
@@ -33,7 +34,7 @@
         <div class="container-inner  container-inner--form">
           <div class="page-title  page-title--inner">
             <h1>Оставьте свой отзыв</h1>
-            <p>Помогите нашим отелям стать лучше! Оставьте отзыв о&nbsp;них, а&nbsp;также о&nbsp;посещенных вами достопримечательностях</p>
+            <p>Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
           </div>
           
           <form action="#" class="review-form" method="post">
@@ -111,54 +112,50 @@
               <ul class="travelers">
                 <li class="travelers__item">
                   
-                  <div class="travelers__item-number">
-                    <div class="input">
+                  <div class="travelers__id">
+                    <div class="input  travelers__number">
                       <input type="text" name="traveler-index-1" id="travelerIndex_1" value="1" readonly>
                       <label for="travelerIndex_1">№</label>
                     </div>
-                  </div>
-                  
-                  <div class="fio  fio--multiple">
-                    <div class="input  fio__item">
+                    
+                    <div class="input  travelers__last-name">
                       <input type="text" id="nameLast_1" name="name-last-1" required>
                       <label for="nameLast_1">Фамилия:</label>
                     </div>
-                    
-                    <div class="input  fio__item">
-                      <input type="text" id="nameFirst_1" name="name-first-1" required>
-                      <label for="nameFirst_1">Имя:</label>
-                    </div>
-                    
-                    <div class="input  fio__item">
-                      <input type="text" id="nameMiddle_1" name="name-middle-1">
-                      <label for="nameMiddle_1">Отчество:</label>
-                    </div>
+                  </div>
+                  
+                  <div class="input  travelers__first-name">
+                    <input type="text" id="nameFirst_1" name="name-first-1" required>
+                    <label for="nameFirst_1">Имя:</label>
+                  </div>
+                  
+                  <div class="input  travelers__middle-name">
+                    <input type="text" id="nameMiddle_1" name="name-middle-1">
+                    <label for="nameMiddle_1">Отчество:</label>
                   </div>
                 </li>
                 
                 <li class="travelers__item">
-                  <div class="travelers__item-number">
-                    <div class="input">
+                  <div class="travelers__id">
+                    <div class="input  travelers__number">
                       <input type="text" name="traveler-index-2" id="travelerIndex_2" value="2" readonly>
                       <label for="travelerIndex_2">№</label>
                     </div>
-                  </div>
-                  
-                  <div class="fio  fio--multiple">
-                    <div class="input  fio__item">
+                    
+                    <div class="input  travelers__last-name">
                       <input type="text" id="nameLast_2" name="name-last-2" required>
                       <label for="nameLast_2">Фамилия:</label>
                     </div>
-                    
-                    <div class="input  fio__item">
-                      <input type="text" id="nameFirst_2" name="name-first-2" required>
-                      <label for="nameFirst_1">Имя:</label>
-                    </div>
-                    
-                    <div class="input  fio__item">
-                      <input type="text" id="nameMiddle_2" name="name-middle-2">
-                      <label for="nameMiddle_1">Отчество:</label>
-                    </div>
+                  </div>
+                  
+                  <div class="input  travelers__first-name">
+                    <input type="text" id="nameFirst_2" name="name-first-2" required>
+                    <label for="nameFirst_1">Имя:</label>
+                  </div>
+                  
+                  <div class="input  travelers__middle-name">
+                    <input type="text" id="nameMiddle_2" name="name-middle-2">
+                    <label for="nameMiddle_1">Отчество:</label>
                   </div>
                 </li>
               </ul>
@@ -200,7 +197,6 @@
               
               <div class="gallery">
                 <ul class="gallery__list">
-<!--
                   <li class="gallery__item">
                     <div class="gallery__photo">
                       <img src="img/gallery__photo-1.jpg" alt="" width="280" height="280">
@@ -208,6 +204,7 @@
                     <span class="gallery__remove-item-link  button"></span>
                     <p class="mobile-hide">img-686.jpg</p>
                   </li>
+<!--
                   <li class="gallery__item">
                     <div class="gallery__photo">
                       <img src="img/gallery__photo-2.jpg" alt="" width="280" height="280">
@@ -285,8 +282,16 @@
           </ul>
         </div>
         
-        <div class="page-footer__copyright">
-          <a class="copyright" href="http://htmlacademy.ru">Разработано <img src="img/htmlacademy.svg" alt="HTML Academy" width="27" height="34"></a>
+        <div class="page-footer__copyright  mobile-hide">
+          <a class="copyright" href="http://htmlacademy.ru">Разработано <svg class="htmlacademy-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="27px" height="34px" viewBox="0 0 26.943 34.09" enable-background="new 0 0 26.943 34.09" xml:space="preserve">
+<path class="htmlacademy-logo__path" d="M13.62,0.017L13.472,0L0,1.412v24.661l13.472,8.017l13.43-7.99l0.042-0.026V1.412L13.62,0.017z M25.019,12.127L13.495,5.334
+	l-0.001-0.104L13.407,5.28l-0.088-0.056v0.109L1.925,12.118V3.147l11.547-1.212l11.547,1.212V12.127z M13.405,6.787L24.923,13.5
+	l-4.479,2.64l-7.093-4.221l-0.013,1.415l5.904,3.513l-0.86,0.507l-5.031-2.992l-0.013,1.415l3.827,2.275l-0.782,0.523l-3.032-1.787
+	l-0.013,1.413l1.852,1.091l-1.8,1.081L2.034,13.622L13.405,6.787z M1.925,15.127l11.411,6.791l0.015,1.044l-7.941-4.728L5.395,19.65
+	l7.979,4.796l0.017,1.076l-7.972-4.741l-0.013,1.415l8.021,4.821l0.045,0.026l8.143-4.872v-1.268l-0.011-0.148v-3.761l3.415-2.036
+	v10.02L13.472,31.85L1.925,24.979V15.127z"/>
+</svg> </a>
         </div>
         
       </footer>

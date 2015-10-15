@@ -76,3 +76,70 @@
     content: " — ";
   }
 }
+
+@mixin mobile-show($style) {
+  display: $style;
+  
+  @media (min-width: $screen_tablet) {
+    display: none;
+  }
+}
+
+@mixin mobile-hide($style) {
+  display: none;
+  
+  @media (min-width: $screen_tablet) {
+    display: #{$style};
+  }
+}
+
+.mobile-show {
+  @include mobile-show(block);
+}
+
+.mobile-hide {
+  @include mobile-hide(block);
+}
+
+.mobile-show-text {
+  @include mobile-show(inline);
+}
+
+.mobile-hide-text {
+  @include mobile-hide(inline);
+}
+
+@mixin iconed-button($icon, $icon-width, $icon-height, $double:none) {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: url($icon);
+    background-size: $icon-width $icon-height;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: .3;
+    @include transition;
+    
+    @if $double==double {
+      @media (min-width: $screen_tablet) {
+        background-size: $icon-width*2 $icon-height*2;
+      }
+    }
+  }
+
+  &:hover:before {
+    opacity: .5;
+  }
+
+  &:active:before {
+    opacity: .1;
+  }
+}

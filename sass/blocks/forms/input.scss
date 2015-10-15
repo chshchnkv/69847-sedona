@@ -19,36 +19,3 @@
     }
   }
 }
-
-
-@mixin mobile-show($style) {
-  display: $style;
-  
-  @media (min-width: $screen_tablet) {
-    display: none;
-  }
-}
-
-@mixin mobile-hide($style) {
-  display: none;
-  
-  @media (min-width: $screen_tablet) {
-    display: #{$style};
-  }
-}
-
-.mobile-show {
-  @include mobile-show(block);
-}
-
-.mobile-hide {
-  @include mobile-hide(block);
-}
-
-.mobile-show-text {
-  @include mobile-show(inline);
-}
-
-.mobile-hide-text {
-  @include mobile-hide(inline);
-}
