@@ -32,20 +32,25 @@ $gallery-delete-btn-size: $gallery-item-size / 2 - 5px;
   }
   
   &__photo {
+    position: relative;
+    overflow: hidden;
+    
     display: block;
     
     @include size($gallery-item-size, $gallery-item-size);
-    
-    overflow: hidden;
 
     @media (min-width: $screen_tablet) {
       @include size($gallery-item-size*2, $gallery-item-size*2);
     }
     
     img {
+      position: absolute;
+      @include centerHV;
+      
       display: block;
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
+      
     }
   }
   
@@ -54,21 +59,47 @@ $gallery-delete-btn-size: $gallery-item-size / 2 - 5px;
     left: 50%;
     top: 0;
     @include translateXY(-50%, -50%);
+    overflow: hidden;
     
     display: block;
-    
     @include size($gallery-delete-btn-size, $gallery-delete-btn-size);
     
     border-radius: 50%;
-    background-color: $grey--lighter;
-    background-image: url("../img/delete.png");
-    background-position: center;
-    background-repeat: no-repeat;
     
-    cursor: pointer;
-    
-    @media (min-width: $screen_tablet) {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
       
+      display: block;
+      
+      @include size(100%,100%);
+      background-image: url("../img/icon-delete.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 12px;
+      
+      opacity: .3;
+      
+      @media (min-width: $screen_tablet) {
+        background-size: 24px;
+      }
+    }
+    
+    &:hover {
+      &:after {
+        opacity: .5;
+      }
+    }
+    
+    &:active {
+      &:after {
+        opacity: .1;
+      }
+    }
+    
+    @media (min-width: $screen_tablet) {      
       top: 0;
       right: 0;
       

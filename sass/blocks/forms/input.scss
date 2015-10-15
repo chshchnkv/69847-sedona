@@ -38,17 +38,17 @@
 }
 
 .mobile-show {
-  @include mobile-show("block");
+  @include mobile-show(block);
 }
 
 .mobile-hide {
-  @include mobile-hide("block");
+  @include mobile-hide(block);
 }
 
 .mobile-show-text {
-  @include mobile-show("inline");
+  @include mobile-show(inline);
 }
 
 .mobile-hide-text {
-  @include mobile-hide("inline");
+  @include mobile-hide(inline);
 }

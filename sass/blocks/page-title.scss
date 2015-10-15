@@ -1,7 +1,20 @@
 .page-title {
   position: relative;
-  padding: 45px 20px;
+  padding: 45px 10% 30px;
+  
   text-align: center;
+  
+  background-color: $text-color--light;
+  
+  @media (min-width: $screen_tablet) {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  
+  @media (min-width: $screen_desktop) {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
     
   h1 {
     margin-top: 0;
@@ -17,33 +30,14 @@
   }
   
   p {
+    margin-bottom: 0;
+    
     font-family: $font-family;
     font-size: $font-size;
     line-height: $line-height;
     text-transform: $text-transform;
   }
-  
-  &--masked {
-  
-    @media (max-width: $screen_tablet -1) {
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
-
-        @include size(100%, 37px);
-
-        background-color: $blue;
-        background-image: url("../img/page-title__bottom-mask.png");
-        background-position: center;
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-      }
-    }
-  }
-  
+    
   &--inner {
     padding: 80px 20px 20px;
     

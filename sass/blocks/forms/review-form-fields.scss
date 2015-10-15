@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   
-  padding: 20px;
+  padding: 20px 0;
   text-transform: $text-transform;
 
   border: none;
@@ -23,12 +23,20 @@
       flex-direction: column;
       align-items: center;
     }
+    
+    @media (min-width: $screen_desktop) {
+      align-items: flex-start;
+    }
   }
   
   &--impressions {
     @media (min-width: $screen_tablet) {
       padding-top: 70px;
       padding-bottom: 80px - $radio-size;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      justify-content: space-around;
     }
   }
   
@@ -40,6 +48,9 @@
   }
   
   &--gallery {
+    flex-direction: column;
+    align-items: stretch;
+    
     @media (min-width: $screen_tablet) {
       padding-bottom: 0;
     }

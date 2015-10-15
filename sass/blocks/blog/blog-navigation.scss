@@ -8,6 +8,8 @@
   border-top: 2px solid $borders;
   border-bottom: 2px solid $borders;
   
+  background-color: $text-color--light;
+  
   @media (min-width: $screen_tablet) {
     border: none;
   }

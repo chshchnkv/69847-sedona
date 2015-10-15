@@ -1,4 +1,5 @@
 .features {
+    
   display: flex;
   flex-direction: column;
   
@@ -13,6 +14,7 @@
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
+  
   text-transform: $text-transform;
   text-align: center;
   color: $text-color--light;
@@ -20,51 +22,78 @@
   background-color: $blue;
   
   &__item {
-    min-height: 256px;
+    position: relative;
+
+    @media (min-width: $screen_tablet) {
+      flex-basis: $basis / 2;
+      flex-grow: 1;
+    }
+
     
     &--text {
-      padding: 45px 20px;
+      padding: 45px 30px;
       
       @media (min-width: $screen_tablet) {
-        width: 256px;
-        flex-shrink: 0;
+        padding: 45px 50px;
+      }
+      
+      @media (min-width: $screen_desktop) {
+        padding: 50px 50px;
       }
     }
     
     &--photo {
       position: relative;
       overflow: hidden;
-            
-      text-align: center;
+
+      min-height: $basis;
       
       & img {
         position: absolute;
         @include centerHV;
-        
+
+        min-width: 100%;
         width: auto;
         height: auto;
+        
+        @media (min-width: $screen_tablet) {
+          min-width: $screen_desktop - $basis;
+        }
       }
       
-//      & img {
-//        position: absolute;
-//        top: -999px;
-//        left: -999px;
-//        right: -999px;
-//        bottom: -999px;
-//
-//        width: auto;
-//        height: 100%;
-//        margin: auto;        
-//      }
-
       @media (min-width: $screen_tablet) {
-        flex-grow: 1;
+        flex-grow: 3;
+      }
+    }
+    
+    &--masked-top {
+      
+      @media (max-width: $screen_tablet - 1) {
+        padding-top: 60px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+
+          @include size(100%, 37px);
+
+          background-color: $blue;
+          background-image: url("../img/page-title__bottom-mask.png");
+          background-position: center;
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+        }
       }
     }
   }
   
   &__header {
     margin-top: 0;
+    margin-bottom: 15px;
+    
     font-size: $font-size--h2;
     line-height: $headings-line-height;
     
@@ -74,9 +103,18 @@
   }
   
   &__number {
+    @include numbered-text;
     
-    &:before, &:after {
-      content: " — ";
+    margin-bottom: 20px;
+    
+    line-height: 1;
+        
+    @media (min-width: $screen_tablet) {
+      margin-bottom: 30px;
     }
+  }
+  
+  &__text {
+    margin: 0;
   }
 }

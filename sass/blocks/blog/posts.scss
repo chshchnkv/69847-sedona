@@ -117,9 +117,10 @@ $blog-meta-icon-size: 11px;
 }
 
 .post-single {
-  margin-bottom: 40px;
-  padding: 0 20px;
-
+  padding-bottom:  40px;
+  
+  background-color: $text-color--light;
+  
   h2 {
     margin-top: 50px;
     margin-bottom: 35px;

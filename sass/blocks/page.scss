@@ -1,19 +1,22 @@
+@viewport {
+  width: device-width; zoom: 1.0;
+}
+
 html {
   box-sizing: border-box;
+  font-family: $font-family;
+  font-size: $html-size-base;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-html {
-  font-family: $font-family;
-  font-size: $html-size-base;
-}
-
 body {
   margin: 0;
   padding: 0;
+  
+  background-color: $grey--lighter;
 }
 
 a {
@@ -69,5 +72,47 @@ blockquote {
     text-align: left;
     text-transform: none;
     color: $brown;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  background-color: $grey--light;
+  
+  @media (min-width: $screen_desktop) {
+    max-width: $screen_desktop;
+    
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+  }
+}
+
+.container-inner {
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  background-color: $text-color--light;
+  
+  &--post {
+    @media (min-width: $screen_tablet) {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      padding-left: 200px;
+      padding-right: 200px;
+    }
+  }
+  
+  &--form {
+    @media (min-width: $screen_tablet) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      padding-left: 125px;
+      padding-right: 125px;
+    }
   }
 }

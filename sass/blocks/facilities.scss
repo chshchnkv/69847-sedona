@@ -31,10 +31,17 @@
   text-align: left;
   color: $text-color;
   
+  background-color: $text-color--light;
+
+  @media (min-width: $screen_tablet) {
+    flex-direction: row;
+    text-align: center;
+  }
+  
   &__item {
     position: relative;
     padding: 30px 20px 30px 70px;
-        
+            
     &--house:before {
       @include facility-icon("house");
     }
@@ -48,6 +55,9 @@
     }
     
     @media (min-width: $screen_tablet) {
+      flex-basis: $basis;
+      flex-grow: 1;
+
       padding: 165px 45px 60px;
       
       &--souvenirs {
@@ -60,10 +70,5 @@
     position: relative;
     margin-top: 0;
     font-size: $font-size--h2;
-  }
-  
-  @media (min-width: $screen_tablet) {
-    flex-direction: row;
-    text-align: center;
   }
 }

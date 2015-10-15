@@ -17,7 +17,15 @@ $padding-h: 15px;
   text-transform: $text-transform;
   word-wrap: break-word;
   
-  @include colors($grey--light, $text-color);
+  @include colors($grey--lighter, fade-out($text-color, .7));
+  
+  &:hover {
+    @include colors(darken($grey--lighter, 5%), fade-out($text-color, .4));
+  }
+  
+  &:active {
+    @include colors(darken($grey--lighter, 11%), fade-out($text-color, .7));
+  }
   
   border: none;
   outline: none;
@@ -25,7 +33,15 @@ $padding-h: 15px;
   @include transition;
   
   &--blue {
-    @include colors($blue, $text-color--light)
+    @include colors($blue, $text-color--light);
+    
+    &:hover {
+      @include colors($blue--hover, $text-color--light);
+    }
+    
+    &:active {
+      @include colors($blue--active, fade-out($text-color--light, .7));
+    }
   }
   
   &--grey {

@@ -8,279 +8,288 @@
   
   <body>
   
-    <header class="page-header">
-      <nav class="main-navigation">
-        <a href="#" class="main-navigation__toggle  main-navigation__toggle--close"></a>
-        <ul class="main-navigation__list  main-navigation__list--opened">
-          <li class="main-navigation__item"><a href="#">Карта штата</a></li>
-          <li class="main-navigation__item"><a href="#">Информация</a></li>
-          <li class="main-navigation__item main-navigation__item--logo">
-            <a href="index.html"><img class="main-navigation__logo" src="img/logo-sedona@1x.png" alt="City of Sedona" width="67" height="56"></a>
-          </li>
-          <li class="main-navigation__item"><a href="#">Фото и видео</a></li>
-          <li class="main-navigation__item"><a href="#">Гостиницы</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-     
-    <main>
-      <div class="welcome  welcome--small">
-        <img class="welcome__text-sedona  welcome__text-sedona--small" src="img/text-sedona.svg" alt="SEDONA" width="280" height="48">
-      </div>
-      
-      <div class="page-title  page-title--inner">
-        <h1>Оставьте свой отзыв</h1>
-        <p>Помогите нашим отелям стать лучше! Оставьте отзыв о&nbsp;них, а&nbsp;также о&nbsp;посещенных вами достопримечательностях</p>
-      </div>
-      
-      
-      <form action="#" class="review-form" method="post">
-        
-        <div class="review-form-fields">
-          <header class="review-form-fields__header">Представьтесь, пожалуйста:</header>
-          
-          <div class="fio">
-            <div class="input  fio__item">
-              <input type="text" id="nameLast" name="name-last" required>
-              <label for="nameLast">Фамилия:</label>
-            </div>
-            
-            <div class="input  fio__item">
-              <input type="text" id="nameFirst" name="name-first" required>
-              <label for="nameFirst">Имя:</label>
-            </div>
-            
-            <div class="input  fio__item">
-              <input type="text" id="nameMiddle" name="name-middle">
-              <label for="nameMiddle">Отчество:</label>
-            </div>
-          </div>
-        </div>
-        
-        <div class="review-form-fields  review-form-fields--impressions">
-          <header class="review-form-fields__header">Ваше общее впечатление:</header>
-          
-          <div class="radiobutton">
-            <input type="radio" name="impression-positive" id="impressionPositive" checked>
-            <label for="impressionPositive">Скорее положительное</label>
-          </div>
-          
-          <div class="radiobutton">
-            <input type="radio" name="impression-positive" id="impressionNegative">
-            <label for="impressionNegative">Скорее отрицательное</label>
-          </div>
-        </div>
-        
-        <div class="review-form-fields">
-          <header class="review-form-fields__header">Даты вашей поездки:</header>
-          
-          <div class="trip-dates">
-            <div class="input  trip-dates__item">
-              <input type="text" id="dateCheckIn" name="date-check-in" required>
-              <label for="dateCheckIn">Дата приезда:</label>
-            </div>
-            
-            <div class="spinner    trip-dates__item">
-              <span class="button  button--light-grey  button--minus"></span>
-              <input type="text" name="stay-length" id="stayLength" required>
-              <span class="button  button--light-grey  button--plus"></span>
-              <label class="mobile-show" for="stayLength">Длительность пребывания:</label>
-              <label class="mobile-hide" for="stayLength">Дней пребывания:</label>
-            </div>
-            
-            <div class="input  trip-dates__item">
-              <input type="text" id="dateCheckOut" name="date-check-out" required>
-              <label for="dateCheckOut">Дата отъезда:</label>
-            </div>
-          </div>
-        </div>
-        
-        <div class="review-form-fields  review-form-fields--travelers">
-          <header class="review-form-fields__header">Количество путешественников:</header>
-          
-          <div class="spinner  spinner--small">
-            <span class="button  button--light-grey  button--minus"></span>
-            <input type="text" name="number-of-travelers" id="numberOfTravelers" required>
-            <span class="button  button--light-grey  button--plus"></span>
-            <label class="mobile-show" for="numberOfTravelers">Количество путешественников:</label>
-            <label class="mobile-hide" for="numberOfTravelers">Кол-во путешественников:</label>
-          </div>
-          
-          <ul class="travelers">
-            <li class="travelers__item">
-              
-              <div class="travelers__item-number">
-                <div class="input">
-                  <input type="text" name="traveler-index-1" id="travelerIndex_1" value="1" readonly>
-                  <label for="travelerIndex_1">№</label>
-                </div>
-              </div>
-              
-              <div class="fio  fio--multiple">
-                <div class="input  fio__item">
-                  <input type="text" id="nameLast_1" name="name-last-1" required>
-                  <label for="nameLast_1">Фамилия:</label>
-                </div>
-                
-                <div class="input  fio__item">
-                  <input type="text" id="nameFirst_1" name="name-first-1" required>
-                  <label for="nameFirst_1">Имя:</label>
-                </div>
-                
-                <div class="input  fio__item">
-                  <input type="text" id="nameMiddle_1" name="name-middle-1">
-                  <label for="nameMiddle_1">Отчество:</label>
-                </div>
-              </div>
+    <div class="container">
+      <header class="page-header">
+        <nav class="main-navigation">
+          <a href="#" class="main-navigation__toggle  main-navigation__toggle--close"></a>
+          <ul class="main-navigation__list  main-navigation__list--opened">
+            <li class="main-navigation__item"><a href="#">Карта штата</a></li>
+            <li class="main-navigation__item"><a href="#">Информация</a></li>
+            <li class="main-navigation__item main-navigation__item--logo">
+              <a href="index.html"><img class="main-navigation__logo" src="img/logo-sedona@1x.png" alt="City of Sedona" width="67" height="56"></a>
             </li>
+            <li class="main-navigation__item"><a href="#">Фото и видео</a></li>
+            <li class="main-navigation__item"><a href="#">Гостиницы</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+       
+      <main>
+        <div class="welcome  welcome--small">
+          <img class="welcome__text-sedona  welcome__text-sedona--small" src="img/text-sedona.svg" alt="SEDONA" width="280" height="48">
+        </div>
+        
+        <div class="container-inner  container-inner--form">
+          <div class="page-title  page-title--inner">
+            <h1>Оставьте свой отзыв</h1>
+            <p>Помогите нашим отелям стать лучше! Оставьте отзыв о&nbsp;них, а&nbsp;также о&nbsp;посещенных вами достопримечательностях</p>
+          </div>
+          
+          <form action="#" class="review-form" method="post">
             
-            <li class="travelers__item">
-              <div class="travelers__item-number">
-                <div class="input">
-                  <input type="text" name="traveler-index-2" id="travelerIndex_2" value="2" readonly>
-                  <label for="travelerIndex_2">№</label>
+            <div class="review-form-fields">
+              <header class="review-form-fields__header">Представьтесь, пожалуйста:</header>
+              
+              <div class="fio">
+                <div class="input  fio__item">
+                  <input type="text" id="nameLast" name="name-last" required>
+                  <label for="nameLast">Фамилия:</label>
                 </div>
+                
+                <div class="input  fio__item">
+                  <input type="text" id="nameFirst" name="name-first" required>
+                  <label for="nameFirst">Имя:</label>
+                </div>
+                
+                <div class="input  fio__item">
+                  <input type="text" id="nameMiddle" name="name-middle">
+                  <label for="nameMiddle">Отчество:</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="review-form-fields  review-form-fields--impressions">
+              <header class="review-form-fields__header">Ваше общее впечатление:</header>
+              
+              <div class="radiobutton">
+                <input type="radio" name="impression-positive" id="impressionPositive" checked>
+                <label for="impressionPositive">Скорее положительное</label>
               </div>
               
-              <div class="fio  fio--multiple">
-                <div class="input  fio__item">
-                  <input type="text" id="nameLast_2" name="name-last-2" required>
-                  <label for="nameLast_2">Фамилия:</label>
+              <div class="radiobutton">
+                <input type="radio" name="impression-positive" id="impressionNegative">
+                <label for="impressionNegative">Скорее отрицательное</label>
+              </div>
+            </div>
+            
+            <div class="review-form-fields">
+              <header class="review-form-fields__header">Даты вашей поездки:</header>
+              
+              <div class="trip-dates">
+                <div class="input  trip-dates__item">
+                  <input type="text" id="dateCheckIn" name="date-check-in" required>
+                  <label for="dateCheckIn">Дата приезда:</label>
                 </div>
                 
-                <div class="input  fio__item">
-                  <input type="text" id="nameFirst_2" name="name-first-2" required>
-                  <label for="nameFirst_1">Имя:</label>
+                <div class="spinner    trip-dates__item">
+                  <span class="button  button--light-grey  button--minus"></span>
+                  <input type="text" name="stay-length" id="stayLength" required>
+                  <span class="button  button--light-grey  button--plus"></span>
+                  <label class="mobile-show" for="stayLength">Длительность пребывания:</label>
+                  <label class="mobile-hide" for="stayLength">Дней пребывания:</label>
                 </div>
                 
-                <div class="input  fio__item">
-                  <input type="text" id="nameMiddle_2" name="name-middle-2">
-                  <label for="nameMiddle_1">Отчество:</label>
+                <div class="input  trip-dates__item">
+                  <input type="text" id="dateCheckOut" name="date-check-out" required>
+                  <label for="dateCheckOut">Дата отъезда:</label>
                 </div>
               </div>
-            </li>
+            </div>
+            
+            <div class="review-form-fields  review-form-fields--travelers">
+              <header class="review-form-fields__header">Количество путешественников:</header>
+              
+              <div class="spinner  spinner--small">
+                <span class="button  button--light-grey  button--minus"></span>
+                <input type="text" name="number-of-travelers" id="numberOfTravelers" required>
+                <span class="button  button--light-grey  button--plus"></span>
+                <label class="mobile-show" for="numberOfTravelers">Количество путешественников:</label>
+                <label class="mobile-hide" for="numberOfTravelers">Кол-во путешественников:</label>
+              </div>
+              
+              <ul class="travelers">
+                <li class="travelers__item">
+                  
+                  <div class="travelers__item-number">
+                    <div class="input">
+                      <input type="text" name="traveler-index-1" id="travelerIndex_1" value="1" readonly>
+                      <label for="travelerIndex_1">№</label>
+                    </div>
+                  </div>
+                  
+                  <div class="fio  fio--multiple">
+                    <div class="input  fio__item">
+                      <input type="text" id="nameLast_1" name="name-last-1" required>
+                      <label for="nameLast_1">Фамилия:</label>
+                    </div>
+                    
+                    <div class="input  fio__item">
+                      <input type="text" id="nameFirst_1" name="name-first-1" required>
+                      <label for="nameFirst_1">Имя:</label>
+                    </div>
+                    
+                    <div class="input  fio__item">
+                      <input type="text" id="nameMiddle_1" name="name-middle-1">
+                      <label for="nameMiddle_1">Отчество:</label>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="travelers__item">
+                  <div class="travelers__item-number">
+                    <div class="input">
+                      <input type="text" name="traveler-index-2" id="travelerIndex_2" value="2" readonly>
+                      <label for="travelerIndex_2">№</label>
+                    </div>
+                  </div>
+                  
+                  <div class="fio  fio--multiple">
+                    <div class="input  fio__item">
+                      <input type="text" id="nameLast_2" name="name-last-2" required>
+                      <label for="nameLast_2">Фамилия:</label>
+                    </div>
+                    
+                    <div class="input  fio__item">
+                      <input type="text" id="nameFirst_2" name="name-first-2" required>
+                      <label for="nameFirst_1">Имя:</label>
+                    </div>
+                    
+                    <div class="input  fio__item">
+                      <input type="text" id="nameMiddle_2" name="name-middle-2">
+                      <label for="nameMiddle_1">Отчество:</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="review-form-fields  review-form-fields--sightseeing">
+              <header class="review-form-fields__header">Посещённые достопримечательности:</header>
+              
+              <div class="sightseeings">
+                <div class="sightseeings__item  checkbox">
+                  <input type="checkbox" id="sightseeing_1" name="sightseeing-1" checked>
+                  <label for="sightseeing_1">Мост Дьявола</label>
+                </div>
+                
+                <div class="sightseeings__item  checkbox">
+                  <input type="checkbox" id="sightseeing_2" name="sightseeing-2">
+                  <label for="sightseeing_2">Слайд-парк</label>
+                </div>
+                
+                <div class="sightseeings__item  checkbox">
+                  <input type="checkbox" id="sightseeing_3" name="sightseeing-3" checked>
+                  <label for="sightseeing_3">Гора-Колокол</label>
+                </div>
+                
+                <div class="sightseeings__item  checkbox">
+                  <input type="checkbox" id="sightseeing_4" name="sightseeing-4" checked>
+                  <label for="sightseeing_4">Красные скалы</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="review-form-fields  review-form-fields--gallery">
+              <header class="review-form-fields__header">Загрузить фотографии:</header>
+              
+              <div class="input-files">
+                <input type="file" name="choose-photos" id="choosePhotos" multiple>
+                <label class="button  input-files__button" for="choosePhotos">Выбрать фотографии</label>
+              </div>
+              
+              <div class="gallery">
+                <ul class="gallery__list">
+<!--
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/gallery__photo-1.jpg" alt="" width="280" height="280">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-686.jpg</p>
+                  </li>
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/gallery__photo-2.jpg" alt="" width="280" height="280">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-687.jpg</p>
+                  </li>
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/gallery__photo-3.jpg" alt="" width="140" height="140">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-687.jpg</p>
+                  </li>
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/gallery__photo-4.jpg" alt="" width="280" height="280">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-688.jpg</p>
+                  </li>
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/gallery__photo-5.jpg" alt="" width="70" height="70">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-689.jpg</p>
+                  </li>
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/gallery__photo-6.jpg" alt="" width="280" height="280">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-690.jpg</p>
+                  </li>
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/gallery__photo-6.jpg" alt="" width="280" height="280">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-691.jpg</p>
+                  </li>
+                  <li class="gallery__item">
+                    <div class="gallery__photo">
+                      <img src="img/photo-bridge@1x.jpg" alt="" width="800" height="400">
+                    </div>
+                    <span class="gallery__remove-item-link  button"></span>
+                    <p class="mobile-hide">img-691.jpg</p>
+                  </li>
+-->
+                </ul>
+              </div>
+            </div>
+            
+            <div class="review-form__submit">
+              <input type="submit" class="button  button--blue" value="Отправить отзыв">
+            </div>
+            
+          </form>
+        </div>
+      </main>
+      
+      
+      <footer class="page-footer">
+       
+        <div class="page-footer__hashtag">
+          <a href="#" class="hashtag">#VisitSedona</a>
+        </div>
+        
+        <div class="page-footer__social">
+          <ul class="social-links">
+            <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-twitter"></i></a></li>
+            <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-facebook"></i></a></li>
+            <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-youtube"></i></a></li>
           </ul>
         </div>
         
-        <div class="review-form-fields  review-form-fields--sightseeing">
-          <header class="review-form-fields__header">Посещённые достопримечательности:</header>
-          
-          <div class="sightseeings">
-            <div class="sightseeings__item">
-              <div class="checkbox">
-                <input type="checkbox" id="sightseeing_1" name="sightseeing-1" checked>
-                <label for="sightseeing_1">Мост Дьявола</label>
-              </div>
-              
-              <div class="checkbox">
-                <input type="checkbox" id="sightseeing_2" name="sightseeing-2">
-                <label for="sightseeing_2">Слайд-парк</label>
-              </div>
-            </div>
-            
-            <div class="sightseeings__item">
-              <div class="checkbox">
-                <input type="checkbox" id="sightseeing_3" name="sightseeing-3" checked>
-                <label for="sightseeing_3">Гора-Колокол</label>
-              </div>
-              
-              <div class="checkbox">
-                <input type="checkbox" id="sightseeing_4" name="sightseeing-4" checked>
-                <label for="sightseeing_4">Красные скалы</label>
-              </div>
-            </div>
-          </div>
+        <div class="page-footer__copyright">
+          <a class="copyright" href="http://htmlacademy.ru">Разработано <img src="img/htmlacademy.svg" alt="HTML Academy" width="27" height="34"></a>
         </div>
         
-        <div class="review-form-fields  review-form-fields--gallery">
-          <header class="review-form-fields__header">Загрузить фотографии:</header>
-          
-          <div class="review-form-fields__item">
-            <input type="file">
-          </div>
-          
-          <div class="gallery">
-            <ul class="gallery__list">
-              <li class="gallery__item">
-                <div class="gallery__photo">
-                  <img src="img/gallery__photo-1.jpg" alt="" width="280" height="280">
-                </div>
-                <span class="gallery__remove-item-link"></span>
-                <p class="mobile-hide">img-686.jpg</p>
-              </li>
-              <li class="gallery__item">
-                <div class="gallery__photo">
-                  <img src="img/gallery__photo-2.jpg" alt="" width="280" height="280">
-                </div>
-                <span class="gallery__remove-item-link"></span>
-                <p class="mobile-hide">img-687.jpg</p>
-              </li>
-              <li class="gallery__item">
-                <div class="gallery__photo">
-                  <img src="img/gallery__photo-3.jpg" alt="" width="140" height="140">
-                </div>
-                <span class="gallery__remove-item-link"></span>
-                <p class="mobile-hide">img-687.jpg</p>
-              </li>
-              <li class="gallery__item">
-                <div class="gallery__photo">
-                  <img src="img/gallery__photo-4.jpg" alt="" width="280" height="280">
-                </div>
-                <span class="gallery__remove-item-link"></span>
-                <p class="mobile-hide">img-688.jpg</p>
-              </li>
-              <li class="gallery__item">
-                <div class="gallery__photo">
-                  <img src="img/gallery__photo-5.jpg" alt="" width="70" height="70">
-                </div>
-                <span class="gallery__remove-item-link"></span>
-                <p class="mobile-hide">img-689.jpg</p>
-              </li>
-              <li class="gallery__item">
-                <div class="gallery__photo">
-                  <img src="img/gallery__photo-6.jpg" alt="" width="280" height="280">
-                </div>
-                <span class="gallery__remove-item-link"></span>
-                <p class="mobile-hide">img-690.jpg</p>
-              </li>
-              <li class="gallery__item">
-                <div class="gallery__photo">
-                  <img src="img/gallery__photo-6.jpg" alt="" width="280" height="280">
-                </div>
-                <span class="gallery__remove-item-link"></span>
-                <p class="mobile-hide">img-691.jpg</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="review-form__submit">
-          <input type="submit" class="button  button--blue" value="Отправить отзыв">
-        </div>
-        
-      </form>
-    </main>
-    
-    
-    <footer class="page-footer">
-     
-      <div class="page-footer__hashtag">
-        <a href="#" class="hashtag">#VisitSedona</a>
-      </div>
-      
-      <div class="page-footer__social">
-        <ul class="social-links">
-          <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-twitter"></i></a></li>
-          <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-facebook"></i></a></li>
-          <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-youtube"></i></a></li>
-        </ul>
-      </div>
-      
-      <div class="page-footer__copyright">
-        <a class="copyright" href="http://htmlacademy.ru">Разработано <img src="img/htmlacademy.svg" alt="HTML Academy" width="27" height="34"></a>
-      </div>
-      
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>

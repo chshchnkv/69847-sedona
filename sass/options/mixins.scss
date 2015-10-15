@@ -23,21 +23,15 @@
 }
 
 @mixin translateXY ($x, $y) {
-  -webkit-transform: translate($x,$y);
-      -ms-transform: translate($x,$y);
-          transform: translate($x,$y);
+  transform: translate($x,$y);
 }
 
 @mixin translateX ($x) {
-  -webkit-transform: translateX($x);
-      -ms-transform: translateX($x);
-          transform: translateX($x);
+  transform: translateX($x);
 }
 
 @mixin translateY ($y) {
-  -webkit-transform: translateY($y);
-      -ms-transform: translateY($y);
-          transform: translateY($y);
+  transform: translateY($y);
 }
 
 @mixin centerV {
@@ -75,4 +69,10 @@
 @mixin colors($bg: #fff, $text: $text-color) {
   color: $text;
   background-color: $bg;
+}
+
+@mixin numbered-text {
+  &:before, &:after {
+    content: " — ";
+  }
 }
