@@ -19,17 +19,3 @@
     }
   }
 }
-
-.mobile-show {
-  display: block;
-  @media (min-width: $screen_tablet) {
-    display: none;
-  }
-}
-
-.mobile-hide {
-  display: none;
-  @media (min-width: $screen_tablet) {
-    display: block;
-  }
-}  

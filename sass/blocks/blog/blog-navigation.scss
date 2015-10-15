@@ -1,0 +1,48 @@
+.blog-navigation {
+  
+  display: flex;
+  flex-wrap: wrap;
+  
+  padding: 45px 20px;
+  
+  border-top: 2px solid $borders;
+  border-bottom: 2px solid $borders;
+  
+  background-color: $text-color--light;
+  
+  @media (min-width: $screen_tablet) {
+    border: none;
+  }
+  
+  &__back {
+    flex-grow: 1;
+    
+    margin-right: $gutter_px;
+    
+    @media (min-width: $screen_tablet) {
+      margin-right: 0;
+    }
+  }
+  
+  &__next {
+    flex-grow: 1;
+  }
+  
+  &__content {
+    order: 3;
+    
+    margin-top: $gutter_px;
+    
+    width: 100%;
+    
+    @media (min-width: $screen_tablet) {
+      order: 0;
+      
+      width: auto;
+      flex-grow: 1;
+      margin-top: 0;
+      margin-right: $gutter_px;
+      margin-left: $gutter_px;
+    }
+  }
+}

@@ -2,3 +2,9 @@ $offset: 20px;
 $margin-bottom: 20px;
 
 $input-min-width: 56px;
+
+$travelers-item-margin: 6px;
+
+//$travelers-item-basis-tablet: floor(($screen_tablet - ($tablet-padding * 2) - ($travelers-item-margin * 3) - $input-min-width) / 3);
+
+$travelers-item-basis-tablet: 176px;

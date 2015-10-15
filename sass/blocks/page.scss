@@ -1,17 +1,118 @@
+@viewport {
+  width: device-width; zoom: 1.0;
+}
+
 html {
   box-sizing: border-box;
+  font-family: $font-family;
+  font-size: $html-size-base;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-html {
-  font-family: $font-family;
-  font-size: $html-size-base;
-}
-
 body {
   margin: 0;
   padding: 0;
+  
+  background-color: $grey--lighter;
+}
+
+a {
+  color: $brown;
+  text-decoration: underline;
+}
+
+ul {
+  @include list-init;
+  
+  font-size: $font-size;
+  line-height: 1.8;
+  text-align: left;
+  text-transform: $text-transform;
+  
+  li {
+    
+    position: relative;
+    padding-left: 20px;
+    
+    &:before {
+      content: "";
+      
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-70%);
+      
+      display: block;
+      @include size(7px, 7px);
+            
+      background-color: $blue;
+    }
+  }
+}
+
+blockquote {
+  
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  
+  font-size: $font-size;
+  line-height: 1.8;
+  text-align: left;
+  text-transform: $text-transform;
+
+  border-left: 2px solid $blue;
+    
+  cite {
+    font-size: $font-size;
+    line-height: 1.8;
+    text-align: left;
+    text-transform: none;
+    color: $brown;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  background-color: $grey--light;
+  
+  @media (min-width: $screen_desktop) {
+    max-width: $screen_desktop;
+    
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+  }
+}
+
+.container-inner {
+  padding-left: $mobile-padding;
+  padding-right: $mobile-padding;
+  
+  background-color: $text-color--light;
+  
+  &--post {
+    @media (min-width: $screen_tablet) {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      padding-left: 200px;
+      padding-right: 200px;
+    }
+  }
+  
+  &--form {
+    @media (min-width: $screen_tablet) {
+      padding-left: $tablet-padding;
+      padding-right: $tablet-padding;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      padding-left: $desktop-padding;
+      padding-right: $desktop-padding;
+    }
+  }
 }

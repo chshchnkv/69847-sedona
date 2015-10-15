@@ -1,14 +1,19 @@
 $blue: #81b3d2;
+$blue--hover: #669ec0;
+$blue--active: #5496bd;
+
 $light: #fff;
 $grey: #b8b8b8;
 $grey--light: #eee;
 $grey--lighter: #f2f2f2;
 $grey--dark: #d6d6d6;
+$brown: #766357;
 $borders: #dbdbdb;
 
 $text-color: #333;
 $text-color--light: #fff;
 $text-meta: #999;
+
 
 $page-active: #e5e5e5;
 
@@ -33,5 +38,14 @@ $text-transform: uppercase;
 $facilities-icon-size: 40px;
 $facilities: (hotel, souvenirs, food);
 
+$gutter_px: 20px;
+
 $screen_mobile: 320px;
-$screen_tablet: 760px;
+$screen_tablet: 768px;
+$screen_desktop: 1200px;
+
+$mobile-padding: 20px;
+$tablet-padding: 59px;
+$desktop-padding: 125px;
+
+$basis: 256px;

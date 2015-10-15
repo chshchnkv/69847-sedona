@@ -9,23 +9,29 @@
   word-wrap: break-word;
   
   background-color: $grey--light;
+
+  @media (min-width: $screen_tablet) {
+    flex-direction: row;
+  }
   
   &__item {
     padding: 30px 20px;
     margin-left: 20px;
     margin-right: 20px;
     
-    @media (max-width: $screen_tablet) {
+    @media (max-width: $screen_tablet) {      
       &:not(:last-child) {
         border-bottom: 1px solid $grey--dark;
       }
     }
     
     @media (min-width: $screen_tablet) {
+      flex-basis: $basis;
+      flex-grow: 1;
+
       margin: 0;
       padding: 50px 45px;
       
-      width: 256px;
       border: none;
     }
   }
@@ -40,13 +46,6 @@
   }
   
   &__number {
-    &:before, &:after {
-      content: " — ";
-    }
-  }
-  
-  @media (min-width: $screen_tablet) {
-    flex-direction: row;
-    justify-content: space-between;
+    @include numbered-text;
   }
 }

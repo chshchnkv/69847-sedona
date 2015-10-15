@@ -2,6 +2,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  
+  li {
+    padding: 0;
+    
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
 }
 
 @mixin size($width: 0, $height: 0) {
@@ -14,21 +23,15 @@
 }
 
 @mixin translateXY ($x, $y) {
-  -webkit-transform: translate($x,$y);
-      -ms-transform: translate($x,$y);
-          transform: translate($x,$y);
+  transform: translate($x,$y);
 }
 
 @mixin translateX ($x) {
-  -webkit-transform: translateX($x);
-      -ms-transform: translateX($x);
-          transform: translateX($x);
+  transform: translateX($x);
 }
 
 @mixin translateY ($y) {
-  -webkit-transform: translateY($y);
-      -ms-transform: translateY($y);
-          transform: translateY($y);
+  transform: translateY($y);
 }
 
 @mixin centerV {
@@ -66,4 +69,77 @@
 @mixin colors($bg: #fff, $text: $text-color) {
   color: $text;
   background-color: $bg;
+}
+
+@mixin numbered-text {
+  &:before, &:after {
+    content: " — ";
+  }
+}
+
+@mixin mobile-show($style) {
+  display: $style;
+  
+  @media (min-width: $screen_tablet) {
+    display: none;
+  }
+}
+
+@mixin mobile-hide($style) {
+  display: none;
+  
+  @media (min-width: $screen_tablet) {
+    display: #{$style};
+  }
+}
+
+.mobile-show {
+  @include mobile-show(block);
+}
+
+.mobile-hide {
+  @include mobile-hide(block);
+}
+
+.mobile-show-text {
+  @include mobile-show(inline);
+}
+
+.mobile-hide-text {
+  @include mobile-hide(inline);
+}
+
+@mixin iconed-button($icon, $icon-width, $icon-height, $double:none) {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: url($icon);
+    background-size: $icon-width $icon-height;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: .3;
+    @include transition;
+    
+    @if $double==double {
+      @media (min-width: $screen_tablet) {
+        background-size: $icon-width*2 $icon-height*2;
+      }
+    }
+  }
+
+  &:hover:before {
+    opacity: .5;
+  }
+
+  &:active:before {
+    opacity: .1;
+  }
 }

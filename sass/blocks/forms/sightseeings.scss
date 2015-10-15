@@ -12,16 +12,29 @@
     
     margin-bottom: 0;
     
-    padding-left: 12.5%;
-    padding-right: 12.5%;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  
+  @media (min-width: $screen_desktop) {
+    padding-left: 0;
+    padding-right: 0;
   }
   
   &__item {
     
     &:last-child {
-      .checkbox:last-child {
-        margin-bottom: 0;
-      }
+      margin-bottom: 0;
+    }
+    
+    @media (min-width: $screen_tablet) {
+      flex-basis: 50%;
+      flex-grow: 1;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      flex-basis: auto;
+      flex-grow: 0;
     }
   }
 }

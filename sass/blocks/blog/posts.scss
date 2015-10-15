@@ -4,20 +4,32 @@ $blog-meta-icon-size: 11px;
   padding: 0 20px;
   
   border-bottom: 2px solid $borders;
+  
+  &__item {
+    border-top: 2px solid $borders;
+  }
 }
 
 .post {
   padding: 40px 0;
   
   text-align: center;
-  border-top: 2px solid $borders;
-  
+    
   &__header {
     a {
       display: block;
       
       color: $text-color;
       text-decoration: none;
+    }
+    
+    h1 {
+      margin: 0;
+      padding: 0;
+      
+      font-size: 2.4rem;
+      line-height: 3.5rem;
+      text-transform: $text-transform;
     }
     
     h2 {
@@ -29,8 +41,9 @@ $blog-meta-icon-size: 11px;
       line-height: $headings-line-height;
     }
   }
-  
+    
   &__content {
+    
     p {
       margin: 30px 0;
       padding: 0;
@@ -40,7 +53,7 @@ $blog-meta-icon-size: 11px;
       line-height: $line-height;      
     }
   }
-  
+
   &__meta {
     font-size: $font-size;
     line-height: 1;
@@ -53,6 +66,10 @@ $blog-meta-icon-size: 11px;
       
       color: $text-meta;
       text-decoration: none;
+    }
+    
+    &--single {
+      margin-bottom: 40px;
     }
   }
   
@@ -96,5 +113,40 @@ $blog-meta-icon-size: 11px;
       background-position: center;
       background-repeat: no-repeat;
     }
+  }
+}
+
+.post-single {
+  padding-bottom:  40px;
+  
+  background-color: $text-color--light;
+  
+  h2 {
+    margin-top: 50px;
+    margin-bottom: 35px;
+
+    font-size: $font-size-giant;
+    line-height: $headings-line-height;
+    text-align: left;
+    text-transform: $text-transform;
+  }
+
+  p {
+    margin: 30px 0;
+    padding: 0;
+
+    font-size: $font-size;
+    line-height: 1.8;
+    text-align: left;
+    text-transform: $text-transform;
+  }
+  
+  .post__preview {
+    font-size: $font-size--h2;
+    line-height: $headings-line-height;
+    text-align: center;
+
+    color: $brown;
+    text-transform: none;
   }
 }

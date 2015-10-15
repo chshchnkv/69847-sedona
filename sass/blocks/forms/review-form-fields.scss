@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   
-  padding: 20px;
+  padding: 20px 0;
   text-transform: $text-transform;
 
   border: none;
@@ -21,7 +21,17 @@
   &--travelers {
     @media (min-width: $screen_tablet) {
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
+      
+      & .spinner {
+        align-self: center;
+      }
+    }
+    
+    @media (min-width: $screen_desktop) {
+      & .spinner {
+        align-self: flex-start;
+      }
     }
   }
   
@@ -29,6 +39,10 @@
     @media (min-width: $screen_tablet) {
       padding-top: 70px;
       padding-bottom: 80px - $radio-size;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      justify-content: space-around;
     }
   }
   
@@ -40,6 +54,9 @@
   }
   
   &--gallery {
+    flex-direction: column;
+    align-items: stretch;
+    
     @media (min-width: $screen_tablet) {
       padding-bottom: 0;
     }

@@ -1,9 +1,12 @@
 .hotel-search {
   padding: 30px 20px;
+  
   font-size: $font-size;
   line-height: $line-height;
   text-transform: $text-transform;
   text-align: center;
+  
+  background-color: $text-color--light;
   
   &__header {
     margin-top: 0;

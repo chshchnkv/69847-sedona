@@ -1,0 +1,22 @@
+.input-files {
+
+  margin-bottom: 55px;
+  
+  input[type="file"] {
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+    
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+  }
+  
+  &__button {
+    display: block;
+    font-size: $font-size--h1;
+    @media (min-width: $screen_tablet) {
+      margin: 0 12.5%;
+    }
+  }
+}

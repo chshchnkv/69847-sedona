@@ -1,18 +1,33 @@
+$padding-v: 10px;
+$padding-h: 15px;
+
 .button {
+  position: relative;
+  
   display: inline-block;
   vertical-align: top;
+  
   max-width: 100%;
-  padding: 10px 15px;
+  padding: $padding-v $padding-h;
+  
   font-family: $font-family;
   font-size: $font-size;
   font-weight: 700;
   line-height: $line-height;
-  
+  text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: $text-transform;
   word-wrap: break-word;
   
-  @include colors($grey--light, $text-color);
+  @include colors($grey--lighter, fade-out($text-color, .7));
+  
+  &:hover {
+    @include colors(darken($grey--lighter, 5%), fade-out($text-color, .4));
+  }
+  
+  &:active {
+    @include colors(darken($grey--lighter, 11%), fade-out($text-color, .7));
+  }
   
   border: none;
   outline: none;
@@ -20,7 +35,15 @@
   @include transition;
   
   &--blue {
-    @include colors($blue, $text-color--light)
+    @include colors($blue, $text-color--light);
+    
+    &:hover {
+      @include colors($blue--hover, $text-color--light);
+    }
+    
+    &:active {
+      @include colors($blue--active, fade-out($text-color--light, .7));
+    }
   }
   
   &--grey {
@@ -32,14 +55,34 @@
   }
   
   &--minus {
-    background-image: url("../img/minus.png");
-    background-position: center;
-    background-repeat: no-repeat;
+    @include iconed-button("../img/icon-minus.svg", 20px, 4px);
   }
   
   &--plus {
-    background-image: url("../img/plus.png");
-    background-position: center;
-    background-repeat: no-repeat;
+    @include iconed-button("../img/icon-plus.svg", 20px, 20px);    
+  }
+  
+  &--white {
+    padding: $padding-v -2px $padding-h -2px;
+    
+    @include colors($text-color--light, $text-color);
+    
+    border: 2px solid $blue;
+    
+    &:hover {
+      @include colors($blue--hover, $text-color--light);
+      
+      border: 2px solid $blue--hover;
+    }
+    
+    &:active {
+      @include colors($blue--active, fade-out($text-color--light, .7));
+      
+      border: 2px solid $blue--active;
+    }
+  }
+  
+  &--big {    
+    font-size: $font-size--h1;
   }
 }

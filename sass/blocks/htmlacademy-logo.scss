@@ -1,0 +1,18 @@
+.htmlacademy-logo {
+  display: inline-block;
+  vertical-align: middle;
+  
+  &__path {
+    fill: #000;
+    @include transition;
+  }
+  
+  
+  &:hover &__path {
+    fill: $blue;
+  }
+  
+  &:active &__path {
+    fill: rgba(0,0,0,.3);
+  }
+}

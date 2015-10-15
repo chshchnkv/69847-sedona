@@ -1,12 +1,10 @@
-/* 
-  (c) Stanislav Chashchnikov.
- */
-
 .main-navigation {
   position: relative;
   
   &__toggle {
     position: absolute;
+    z-index: 1;
+    
     top: 20px;
     right: 20px;
     
@@ -20,12 +18,12 @@
     cursor: pointer;
     
     &--close {
-      background-image: url("../img/menu__close-button.png");
+      background-image: url("../img/icon-cross.svg");
     }
     
     
     &--open {
-      background-image: url("../img/menu__open-button.png");  
+      background-image: url("../img/icon-menu.svg");  
     }
     
     @media (min-width: $screen_tablet) {
@@ -36,6 +34,7 @@
   
   &__list {
     @include list-init;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,6 +42,9 @@
     @include colors($blue, $text-color--light);
     
     @media (min-width: $screen_tablet) {
+      flex-direction: row;
+      justify-content: space-around;
+
       @include colors($light, $text-color);
     }
     
@@ -54,11 +56,6 @@
     &--closed {
       
     }
-    
-    @media (min-width: $screen_tablet) {
-      flex-direction: row;
-      justify-content: space-around;
-    }
   }
   
   
@@ -68,18 +65,42 @@
     
     a {
       display: block;
+      
       padding-top: 20px;
       padding-bottom: 20px;
+      
       font-family: $font-family;
       font-size: $font-size--h2;
+      line-height: 1;
       font-weight: $headings-weight;
       color: $text-color--light;
       text-align: center;
       text-decoration: none;
-      text-transform: uppercase;
+      text-transform: $text-transform;
+      
+      @include transition;
+      
+      &:hover {
+        background-color: $blue--hover;
+      }
+      
+      &:active {
+        color: fade-out($text-color--light, .7);
+        background-color: $blue--active;
+      }
       
       @media (min-width: $screen_tablet) {
         color: $text-color;
+        
+        &:hover {
+          color: $blue;
+          background-color: $text-color--light;
+        }
+        
+        &:active {
+          color: rgba(0,0,0,.3);
+          background-color: $text-color--light;
+        }
       }
     }
     
@@ -112,13 +133,17 @@
 
       overflow: visible;      
       border: none;
-      background-color: #fff;
-      
+      background-color: $text-color--light;
+            
       a {
         position: relative;
         z-index: 1;
         padding: 0;
         font-size: 0; // не знаю что за хак такой пришлось сделать
+
+        &:hover {
+          background-color: $text-color--light;
+        }
         
         &:after {
           content: "";
@@ -127,16 +152,36 @@
           @include centerH;
           display: block;
           
-          @include size(138px, 70px);
+          @include size(138px, 72px);
           
           background-image: url("../img/form-logo-triangle.svg");
           background-repeat: no-repeat;
           background-size: auto;
         }
       }
-      
+    }
+    
+    &--state-map {
       @media (min-width: $screen_tablet) {
-        order: 0;
+        order: 4;
+      }
+    }
+    
+    &--info {
+      @media (min-width: $screen_tablet) {
+        order: 1;
+      }
+    }
+    
+    &--photo-video {
+      @media (min-width: $screen_tablet) {
+        order: 2;
+      }
+    }
+    
+    &--hotels {
+      @media (min-width: $screen_tablet) {
+        order: 5;
       }
     }
   }

@@ -26,14 +26,36 @@
 
         border-radius: 5px;
         background-color: $grey--lighter;
-      }      
+        
+        @include transition($what: background-color);
+      }
+      
+      &:hover:before {
+        background-color: darken($grey--lighter, 5%);
+        border-color: darken($grey--lighter, 5%);
+      }
+      
+      &:active:before {
+        background-color: darken($grey--lighter, 11%);
+        border-color: darken($grey--lighter, 11%);
+      }
     }
     
     &:checked {
-      &+label:before {
-        background-image: url("../img/check-mark.png");
-        background-position: center;
-        background-repeat: no-repeat;
+      &+label {
+        &:before {
+          background-image: url("../img/check-mark.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 25px 19px;
+          
+          @media (min-resolution: 1.5dppx) {
+            background-image: url("../img/check-mark@2x.png");
+          }
+        }
+        
+        &:active:before {
+        }
       }
     }
   }
