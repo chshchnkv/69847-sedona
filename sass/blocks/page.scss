@@ -77,7 +77,7 @@ blockquote {
 
 .container {
   margin: 0 auto;
-  background-color: $grey--light;
+  background-color: $text-color--light;
   
   @media (min-width: $screen_desktop) {
     max-width: $screen_desktop;
@@ -89,9 +89,7 @@ blockquote {
 .container-inner {
   padding-left: $mobile-padding;
   padding-right: $mobile-padding;
-  
-  background-color: $text-color--light;
-  
+    
   &--post {
     @media (min-width: $screen_tablet) {
       padding-left: 45px;
