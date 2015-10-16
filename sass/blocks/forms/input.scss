@@ -10,12 +10,6 @@
       @include label;
     }
     
-    &:required ~ label {
-      &:after {
-        content: " *";
-        display: inline;
-        color: red;
-      }
-    }
+    @include required;
   }
 }

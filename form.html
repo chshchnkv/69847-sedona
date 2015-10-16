@@ -84,9 +84,9 @@
                 </div>
                 
                 <div class="spinner    trip-dates__item">
-                  <span class="button  button--light-grey  button--minus"></span>
-                  <input type="text" name="stay-length" id="stayLength" required>
-                  <span class="button  button--light-grey  button--plus"></span>
+                  <span class="spinner__minus  button  button--light-grey  button--minus"></span>
+                  <input type="number" name="stay-length" id="stayLength" min="1" max="999" value="1" required>
+                  <span class="spinner__plus  button  button--light-grey  button--plus"></span>
                   <label class="mobile-show" for="stayLength">Длительность пребывания:</label>
                   <label class="mobile-hide" for="stayLength">Дней пребывания:</label>
                 </div>
@@ -102,9 +102,9 @@
               <header class="review-form-fields__header">Количество путешественников:</header>
               
               <div class="spinner  spinner--small">
-                <span class="button  button--light-grey  button--minus"></span>
-                <input type="text" name="number-of-travelers" id="numberOfTravelers" required>
-                <span class="button  button--light-grey  button--plus"></span>
+                <span class="spinner__minus  button  button--light-grey  button--minus"></span>
+                <input type="number" name="number-of-travelers" id="numberOfTravelers" min="1" max="999" value="2" required>
+                <span class="spinner__plus  button  button--light-grey  button--plus"></span>
                 <label class="mobile-show" for="numberOfTravelers">Количество путешественников:</label>
                 <label class="mobile-hide" for="numberOfTravelers">Кол-во путешественников:</label>
               </div>
@@ -296,5 +296,6 @@
         
       </footer>
     </div>
+    <script src="js/spinner.js"></script>
   </body>
 </html>
