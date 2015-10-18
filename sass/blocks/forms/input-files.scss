@@ -15,8 +15,13 @@
   &__button {
     display: block;
     font-size: $font-size--h1;
+    
     @media (min-width: $screen_tablet) {
       margin: 0 12.5%;
+    }
+
+    @media (min-width: $screen_desktop) {
+      margin: 0 25%;
     }
   }
 }
