@@ -17,14 +17,22 @@
     width: $input-min-width;
   }
 
-  input[type="text"] {
+  input[type="number"] {
     @include input;
+    @include required;
+    
     width: $input-min-width;
 
     flex-grow: 1;
     flex-shrink: 1;
 
     margin: 0 6px;
+    
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0; 
+    }
 
     @media (min-width: $screen_tablet) {
       margin: 0;

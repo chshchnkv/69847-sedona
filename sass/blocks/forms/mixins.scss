@@ -36,3 +36,14 @@ $focused-border-width: 4px;
   padding-left: $offset;
   font-size: $font-size;
 }
+
+
+@mixin required {
+  &:required ~ label {
+    &:after {
+      content: " *";
+      display: inline;
+      color: red;
+    }
+  }
+}
