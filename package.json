@@ -35,6 +35,9 @@
     "node": "^0.12.7"
   },
   "devDependencies": {
+    "grunt-combine-media-queries": "^1.0.19",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-watch": "^0.6.1"
   }
 }
