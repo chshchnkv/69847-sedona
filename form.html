@@ -3,86 +3,87 @@
   <head>
     <meta charset="utf-8">
     <title>Отзыв</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  
+
   <body>
-  
+
     <div class="container">
+
       <header class="page-header">
         <nav class="main-navigation">
-          <span class="main-navigation__toggle  main-navigation__toggle--close"></span>
-          <ul class="main-navigation__list  main-navigation__list--opened">
-            <li class="main-navigation__item  main-navigation__item--state-map"><a href="#">Карта штата</a></li>
-            <li class="main-navigation__item  main-navigation__item--info"><a href="#">Информация</a></li>
-            <li class="main-navigation__item main-navigation__item--logo">
+          <span class="main-navigation__toggle"></span>
+          <ul class="main-navigation__list">
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--state-map"><a href="#">Карта штата</a></li>
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--info"><a href="#">Информация</a></li>
+            <li class="main-navigation__item  main-navigation__item--logo">
               <a href="index.html">
                 <img class="main-navigation__logo" src="img/logo-sedona@1x.png" srcset="img/logo-sedona@2x.png 2x, img/logo-sedona@3x.png 3x" alt="City of Sedona" width="67" height="56">
               </a>
             </li>
-            <li class="main-navigation__item  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
-            <li class="main-navigation__item  main-navigation__item--hotels"><a href="#">Гостиницы</a></li>
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--hotels"><a href="#">Гостиницы</a></li>
           </ul>
         </nav>
-      </header>      
+      </header>
 
       <main>
         <div class="welcome  welcome--small">
           <img class="welcome__text-sedona  welcome__text-sedona--small" src="img/text-sedona.svg" alt="SEDONA" width="280" height="48">
         </div>
-        
+
         <div class="container-inner  container-inner--form">
           <div class="page-title  page-title--inner">
             <h1>Оставьте свой отзыв</h1>
             <p>Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
           </div>
-          
+
           <form action="https://echo.htmlacademy.ru/adaptive" class="review-form" method="post">
-            
+
             <div class="review-form-fields">
               <header class="review-form-fields__header">Представьтесь, пожалуйста:</header>
-              
+
               <div class="fio">
                 <div class="input  fio__item">
                   <input type="text" id="nameLast" name="name-last" required>
                   <label for="nameLast">Фамилия:</label>
                 </div>
-                
+
                 <div class="input  fio__item">
                   <input type="text" id="nameFirst" name="name-first" required>
                   <label for="nameFirst">Имя:</label>
                 </div>
-                
+
                 <div class="input  fio__item">
                   <input type="text" id="nameMiddle" name="name-middle">
                   <label for="nameMiddle">Отчество:</label>
                 </div>
               </div>
             </div>
-            
+
             <div class="review-form-fields  review-form-fields--impressions">
               <header class="review-form-fields__header">Ваше общее впечатление:</header>
-              
+
               <div class="radiobutton">
                 <input type="radio" name="impression-positive" id="impressionPositive" checked>
                 <label for="impressionPositive">Скорее положительное</label>
               </div>
-              
+
               <div class="radiobutton">
                 <input type="radio" name="impression-positive" id="impressionNegative">
                 <label for="impressionNegative">Скорее отрицательное</label>
               </div>
             </div>
-            
+
             <div class="review-form-fields">
               <header class="review-form-fields__header">Даты вашей поездки:</header>
-              
+
               <div class="trip-dates">
                 <div class="input  trip-dates__item">
                   <input type="text" id="dateCheckIn" name="date-check-in" required>
                   <label for="dateCheckIn">Дата приезда:</label>
                 </div>
-                
+
                 <div class="spinner    trip-dates__item">
                   <span class="spinner__minus  button  button--light-grey  button--minus"></span>
                   <input type="number" name="stay-length" id="stayLength" min="1" max="999" value="1" required>
@@ -90,17 +91,17 @@
                   <label class="mobile-show" for="stayLength">Длительность пребывания:</label>
                   <label class="mobile-hide" for="stayLength">Дней пребывания:</label>
                 </div>
-                
+
                 <div class="input  trip-dates__item">
                   <input type="text" id="dateCheckOut" name="date-check-out" required>
                   <label for="dateCheckOut">Дата отъезда:</label>
                 </div>
               </div>
             </div>
-            
+
             <div class="review-form-fields  review-form-fields--travelers">
               <header class="review-form-fields__header">Количество путешественников:</header>
-              
+
               <div class="spinner  spinner--small">
                 <span class="spinner__minus  button  button--light-grey  button--minus"></span>
                 <input type="number" name="number-of-travelers" id="numberOfTravelers" min="1" max="999" value="1" required>
@@ -108,27 +109,27 @@
                 <label class="mobile-show" for="numberOfTravelers">Количество путешественников:</label>
                 <label class="mobile-hide" for="numberOfTravelers">Кол-во путешественников:</label>
               </div>
-              
+
               <ul class="travelers">
                 <li class="travelers__item">
-                  
+
                   <div class="travelers__id">
                     <div class="input  travelers__number">
                       <input type="text" name="traveler-index-1" id="travelerIndex_1" value="1" tabindex="-1" readonly>
                       <label for="travelerIndex_1">№</label>
                     </div>
-                    
+
                     <div class="input  travelers__last-name">
                       <input type="text" id="nameLast_1" name="name-last-1" required>
                       <label for="nameLast_1">Фамилия:</label>
                     </div>
                   </div>
-                  
+
                   <div class="input  travelers__first-name">
                     <input type="text" id="nameFirst_1" name="name-first-1" required>
                     <label for="nameFirst_1">Имя:</label>
                   </div>
-                  
+
                   <div class="input  travelers__middle-name">
                     <input type="text" id="nameMiddle_1" name="name-middle-1">
                     <label for="nameMiddle_1">Отчество:</label>
@@ -136,61 +137,62 @@
                 </li>
               </ul>
             </div>
-            
+
             <div class="review-form-fields  review-form-fields--sightseeing">
               <header class="review-form-fields__header">Посещённые достопримечательности:</header>
-              
+
               <div class="sightseeings">
                 <div class="sightseeings__item  checkbox">
                   <input type="checkbox" id="sightseeing_1" name="sightseeing-1" checked>
                   <label for="sightseeing_1">Мост Дьявола</label>
                 </div>
-                
+
                 <div class="sightseeings__item  checkbox">
                   <input type="checkbox" id="sightseeing_2" name="sightseeing-2">
                   <label for="sightseeing_2">Слайд-парк</label>
                 </div>
-                
+
                 <div class="sightseeings__item  checkbox">
                   <input type="checkbox" id="sightseeing_3" name="sightseeing-3" checked>
                   <label for="sightseeing_3">Гора-Колокол</label>
                 </div>
-                
+
                 <div class="sightseeings__item  checkbox">
                   <input type="checkbox" id="sightseeing_4" name="sightseeing-4" checked>
                   <label for="sightseeing_4">Красные скалы</label>
                 </div>
               </div>
             </div>
-            
+
             <div class="review-form-fields  review-form-fields--gallery">
               <header class="review-form-fields__header">Загрузить фотографии:</header>
-              
+
               <div class="input-files">
                 <input type="file" name="choose-photos" id="choosePhotos" multiple>
                 <label class="button  input-files__button" for="choosePhotos">Выбрать фотографии</label>
               </div>
-              
+
               <div class="gallery">
                 <ul class="gallery__list">
                 </ul>
               </div>
             </div>
-            
+
             <div class="review-form__submit">
               <input type="submit" class="button  button--blue" value="Отправить отзыв">
             </div>
-            
+
           </form>
         </div>
       </main>
 
+
       <footer class="page-footer">
-       
+
         <div class="page-footer__hashtag">
           <a href="#" class="hashtag">#VisitSedona</a>
         </div>
-        
+
         <div class="page-footer__social">
           <ul class="social-links">
             <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-twitter"></i></a></li>
@@ -198,7 +200,7 @@
             <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-youtube"></i></a></li>
           </ul>
         </div>
-        
+
         <div class="page-footer__copyright  mobile-hide">
           <a class="copyright" href="http://htmlacademy.ru">Разработано <svg class="htmlacademy-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="27px" height="34px" viewBox="0 0 26.943 34.09" enable-background="new 0 0 26.943 34.09" xml:space="preserve">
@@ -212,21 +214,21 @@
         </div>
       </footer>
     </div>
-    
-    
+
+
     <div class="modal" id="errorModal">
       <header><h1>Что-то пошло не&nbsp;так!</h1></header>
-      
+
       <p>Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
-      
+
        <footer><a href="#" class="button button--blue">Ok</a></footer>
     </div>
-    
+
     <div class="modal  modal--wide" id="successModal">
       <header><h1>Ваш отзыв отправлен!</h1></header>
-      
+
       <p>Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
-      
+
       <footer><a href="#" class="button button--blue">Закрыть окно</a></footer>
     </div>
 
@@ -264,7 +266,7 @@
         <label for="nameMiddle_{{id}}">Отчество:</label>
       </div>
     </script>
-    
+
     <script id="gallery-image-template" type="text/html">
       <div class="gallery__photo">
         <img src="{{image}}" alt="{{name}}" title="{{name}}" width="{{width}}" height="{{height}}">
@@ -273,11 +275,12 @@
       <p class="mobile-hide">{{name}}</p>
     </script>
 <!--  html templates end  -->
-   
+
     <script src="node_modules/mustache/mustache.min.js"></script>
     <script src="js/send.js"></script>
     <script src="js/spinner.js"></script>
-    
+    <script src="js/menu.js"></script>
+
     <script>
       var html = document.querySelector("html");
       html.classList.remove("no-js");

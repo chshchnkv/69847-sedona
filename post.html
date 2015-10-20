@@ -3,50 +3,51 @@
   <head>
     <meta charset="UTF-8">
     <title>Внимание! Сбежала моя домашняя анаконда</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
   </head>
-   
-   
+
+
   <body>
-   
+
     <div class="container">
+
       <header class="page-header">
         <nav class="main-navigation">
-          <span class="main-navigation__toggle  main-navigation__toggle--close"></span>
-          <ul class="main-navigation__list  main-navigation__list--opened">
-            <li class="main-navigation__item  main-navigation__item--state-map"><a href="#">Карта штата</a></li>
-            <li class="main-navigation__item  main-navigation__item--info"><a href="#">Информация</a></li>
-            <li class="main-navigation__item main-navigation__item--logo">
+          <span class="main-navigation__toggle"></span>
+          <ul class="main-navigation__list">
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--state-map"><a href="#">Карта штата</a></li>
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--info"><a href="#">Информация</a></li>
+            <li class="main-navigation__item  main-navigation__item--logo">
               <a href="index.html">
                 <img class="main-navigation__logo" src="img/logo-sedona@1x.png" srcset="img/logo-sedona@2x.png 2x, img/logo-sedona@3x.png 3x" alt="City of Sedona" width="67" height="56">
               </a>
             </li>
-            <li class="main-navigation__item  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
-            <li class="main-navigation__item  main-navigation__item--hotels"><a href="#">Гостиницы</a></li>
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
+            <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--hotels"><a href="#">Гостиницы</a></li>
           </ul>
         </nav>
       </header>
-      
+
       <main>
         <div class="welcome  welcome--small">
           <img class="welcome__text-sedona  welcome__text-sedona--small" src="img/text-sedona.svg" alt="Sedona" width="460" height="80">
         </div>
-        
+
         <div class="container-inner  container-inner--post">
           <section class="page-title  page-title--inner  page-title--blog">
             <h1>Блог шерифа</h1>
             <p>Седона удивительный город! Горы здесь красного цвета, а местный шериф ведет блог и общается на форумах.</p>
           </section>
-          
+
           <article class="post-single">
             <div class="post__meta  post__meta--single">
               <a href="#" class="post__date">Позавчера</a><a href="#" class="post__category">Происшествия</a>
             </div>
-            
+
             <header class="post__header">
               <h1>Внимание! Сбежала моя домашняя анаконда</h1>
             </header>
-            
+
             <section class="post__content">
               <p class="post__preview">Жители Седоны и гости города, будьте бдительны — Сбежала моя домашняя змея. Увидевшему срочно звонить 911 и бежать от нее подальше.</p>
               <h2>Предыстория</h2>
@@ -75,15 +76,15 @@
             <a href="#" class="blog-navigation__next  button  button--big  button--white" rel="next">След.<span class="mobile-hide-text"> пост</span></a>
           </div>
         </div>
-        
+
       </main>
-      
+
       <footer class="page-footer">
-       
+
         <div class="page-footer__hashtag">
           <a href="#" class="hashtag">#VisitSedona</a>
         </div>
-        
+
         <div class="page-footer__social">
           <ul class="social-links">
             <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-twitter"></i></a></li>
@@ -91,7 +92,7 @@
             <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-youtube"></i></a></li>
           </ul>
         </div>
-        
+
         <div class="page-footer__copyright">
           <a class="copyright" href="http://htmlacademy.ru">Разработано <svg class="htmlacademy-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="27px" height="34px" viewBox="0 0 26.943 34.09" enable-background="new 0 0 26.943 34.09" xml:space="preserve">
@@ -103,8 +104,11 @@
 	v10.02L13.472,31.85L1.925,24.979V15.127z"/>
 </svg> </a>
         </div>
-        
+
       </footer>
+
+      <script src="js/menu.js"></script>
+
     </div>
   </body>
 </html>

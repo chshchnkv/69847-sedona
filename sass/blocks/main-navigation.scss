@@ -1,74 +1,61 @@
 .main-navigation {
   position: relative;
-  
+
   &__toggle {
     position: absolute;
-    z-index: 1;
-    
-    top: 20px;
+    z-index: 2;
+
+    top: 15px;
     right: 20px;
-    
+
     display: block;
     width: 23px;
     height: 23px;
 
+    background-image: url("../img/icon-menu.svg");
     background-position: center;
     background-repeat: no-repeat;
-    
+
     cursor: pointer;
-    
+
     &--close {
       background-image: url("../img/icon-cross.svg");
     }
-    
-    
-    &--open {
-      background-image: url("../img/icon-menu.svg");  
-    }
-    
+
     @media (min-width: $screen_tablet) {
       display: none;
     }
   }
-  
-  
+
+
   &__list {
     @include list-init;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     @include colors($blue, $text-color--light);
-    
+
     @media (min-width: $screen_tablet) {
       flex-direction: row;
       justify-content: space-around;
 
       @include colors($light, $text-color);
     }
-    
-    &--opened {
-      
-    }
-    
-    
-    &--closed {
-      
-    }
   }
-  
-  
+
+
   &__item {
     margin: 0;
     padding: 0;
-    
+
     a {
       display: block;
-      
+
       padding-top: 20px;
       padding-bottom: 20px;
-      
+
       font-family: $font-family;
       font-size: $font-size--h2;
       line-height: 1;
@@ -77,37 +64,43 @@
       text-align: center;
       text-decoration: none;
       text-transform: $text-transform;
-      
+
       @include transition;
-      
+
       &:hover {
         background-color: $blue--hover;
       }
-      
+
       &:active {
         color: fade-out($text-color--light, .7);
         background-color: $blue--active;
       }
-      
+
       @media (min-width: $screen_tablet) {
         color: $text-color;
-        
+
         &:hover {
           color: $blue;
           background-color: $text-color--light;
         }
-        
+
         &:active {
           color: rgba(0,0,0,.3);
           background-color: $text-color--light;
         }
       }
     }
-    
+
+    &--hidden {
+      @media (max-width: $screen_tablet - 1) {
+        display: none;
+      }
+    }
+
     // показываем границы до размера планшета
     border-top: 1px solid rgba(255,255,255,.2);
     border-bottom: 1px solid rgba(1,1,1,.2);
-    
+
     @media (min-width: $screen_tablet) {
       border: none;
     }
@@ -121,20 +114,20 @@
       background-image: url("../img/menu-shadow.png");
       background-repeat: repeat-x;
       background-position: bottom;
-      
+
       @media (min-width: $screen_tablet) {
         background: none;
       }
     }
-    
+
     &--logo {
       position: relative;
       order: 3;
 
-      overflow: visible;      
+      overflow: visible;
       border: none;
       background-color: $text-color--light;
-            
+
       a {
         position: relative;
         z-index: 1;
@@ -144,48 +137,48 @@
         &:hover {
           background-color: $text-color--light;
         }
-        
+
         &:after {
           content: "";
           position: absolute;
           top: 0;
           @include centerH;
           display: block;
-          
+
           @include size(138px, 72px);
-          
+
           background-image: url("../img/form-logo-triangle.svg");
           background-repeat: no-repeat;
           background-size: auto;
         }
       }
     }
-    
+
     &--state-map {
       @media (min-width: $screen_tablet) {
         order: 4;
       }
     }
-    
+
     &--info {
       @media (min-width: $screen_tablet) {
         order: 1;
       }
     }
-    
+
     &--photo-video {
       @media (min-width: $screen_tablet) {
         order: 2;
       }
     }
-    
+
     &--hotels {
       @media (min-width: $screen_tablet) {
         order: 5;
       }
     }
   }
-  
+
   &__logo {
     position: relative;
     z-index: 1;
