@@ -44,6 +44,10 @@
     flex-grow: 0;
     flex-shrink: 0;
     margin-right: 6px;
+    
+    input {
+      padding-right: 5px;
+    }
   }
   
   &__last-name {

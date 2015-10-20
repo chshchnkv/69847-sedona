@@ -58,6 +58,7 @@
     align-items: stretch;
     
     @media (min-width: $screen_tablet) {
+      flex-direction: column;
       padding-bottom: 0;
     }
   }
