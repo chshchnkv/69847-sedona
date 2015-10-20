@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     sass: {
       style: {
         files: {
-          'css/style.css': 'sass/style.scss'
+          "css/style.css": "sass/style.scss"
         }
       }
     },
@@ -24,15 +24,42 @@ module.exports = function(grunt) {
         src: 'css/*.css'
       }
     },
+    
+    cmq: {
+      style: {
+        files: {
+          "css/style.css": ["css/style.css"]
+        }
+      }
+    },
 
-    watch: {
+    cssmin: {
       options: {
-              livereload: true,
-            },
+        keepSpecialComments: 0,
+        report: "gzip"
+      },
+      target: {
+        files: {
+          "css/style.min.css": ["css/style.css"]
+        }
+      }
+    },
+    
+    watch: {
+      configFiles: {
+        files: [ 'Gruntfile.js', 'config/*.js' ],
+        options: {
+          reload: true
+        }
+      },
+      
+      options: {
+        livereload: true,
+      },
 
       style: {
         files: ['sass/**/*.scss', 'sass/*.scss'],
-        tasks: ['sass', 'postcss'],
+        tasks: ['sass', 'cmq', 'postcss', 'cssmin'],
         options: {
           spawn: false,
           livereload: true
@@ -45,5 +72,5 @@ module.exports = function(grunt) {
 
   grunt.initConfig(config);
   
-  grunt.loadNpmTasks('grunt-contrib-watch');
+//  grunt.loadNpmTasks('grunt-contrib-watch');
 };

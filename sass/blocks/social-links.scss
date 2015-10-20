@@ -1,17 +1,13 @@
 .social-links {
   @include list-init;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   
   &__item {
-    display: inline-block;
-    vertical-align: top;
     margin-right: 5px;
-    
-    &:last-child {
-      margin-right: 0;
-    }
-    
+    margin-bottom: 5px;
+        
     .button {
       font-size: $font-size--h2;
     }

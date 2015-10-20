@@ -49,9 +49,10 @@
     function changeNumber(operation) {
       var value = Number(input.value);
       var step = Number(input.step);
+      var changed = false;
 
       if (isNaN(value)) {
-        value = 0;
+        value = input.min;
       }
       
       if (isNaN(step) || (step === 0)) {
@@ -63,6 +64,7 @@
         
         if (value <= input.max) {
           input.value = value;
+          changed = true;
         }
         
       } else {        
@@ -70,8 +72,20 @@
         
         if (value >= input.min) {
           input.value = value;
+          changed = true;
+        }
+      }
+      
+      if (changed) {
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            input.dispatchEvent(evt);
+        }
+        else
+            input.fireEvent("onchange");
+          
         }
       }
     }
-  }
 })();
