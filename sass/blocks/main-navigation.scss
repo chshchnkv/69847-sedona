@@ -131,6 +131,10 @@
       a {
         position: relative;
         z-index: 1;
+        @include centerH;
+        
+        width: 138px;
+        
         padding: 0;
         font-size: 0; // не знаю что за хак такой пришлось сделать
 
