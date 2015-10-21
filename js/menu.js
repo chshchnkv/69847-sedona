@@ -3,8 +3,6 @@
   var menuToggle = document.querySelector(".main-navigation__toggle");
   var menuItems = document.querySelectorAll(".main-navigation__item");
 
-  console.log(menuItems);
-
   menuToggle.addEventListener("click", function (event) {
     event.preventDefault();
     menuToggle.classList.toggle("main-navigation__toggle--close");

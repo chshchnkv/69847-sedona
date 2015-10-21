@@ -11,5 +11,12 @@
     }
     
     @include required;
+    
+    &[type^="date"] {
+      &::-webkit-inner-spin-button,
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+    }
   }
 }

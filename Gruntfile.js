@@ -45,6 +45,20 @@ module.exports = function(grunt) {
       }
     },
     
+    concat: {
+      main: {
+        src: [
+          'node_modules/mustache/mustache.min.js',
+          'node_modules/moment/min/moment-with-locales.min.js',
+          'js/modals.js',
+          'js/send.js',
+          'js/spinner.js',
+          'js/menu.js'
+        ],
+        dest: 'js/scripts.js'
+      }
+    },
+    
     watch: {
       configFiles: {
         files: [ 'Gruntfile.js', 'config/*.js' ],
@@ -58,14 +72,15 @@ module.exports = function(grunt) {
       },
 
       style: {
-        files: ['sass/**/*.scss', 'sass/*.scss'],
-        tasks: ['sass', 'cmq', 'postcss', 'cssmin'],
+        files: ['sass/**/*.scss', 'sass/*.scss', 'js/**/*.js', 'js/*.js'],
+        tasks: ['sass', 'cmq', 'postcss', 'cssmin', 'concat'],
         options: {
           spawn: false,
           livereload: true
         }
       }
     }
+    
   };
 
   config = require('./.gosha')(grunt, config);

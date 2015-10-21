@@ -15,18 +15,25 @@ $focused-border-width: 4px;
   
   @include transition($what: background-color);
   
-  &:not(:read-only):hover {
-    background-color: darken($grey--lighter, 5%);
+  &:read-write:hover {
+    background-color: darken($bg-color, 5%);
   }
   
-  &:not(:read-only):focus {
+  &:read-write:focus {
     padding: $offset - $focused-border-width;
     
     background-color: $text-color--light;
     
-    border: $focused-border-width solid $grey--lighter;
+    border: $focused-border-width solid $bg-color;
     outline: none;
   }
+  
+//  &:invalid {
+//    background-color: mix($bg-color, rgba(255,0,0,.1));
+//    &:hover {
+//      background-color: mix(darken($bg-color, 5%), rgba(255,0,0,.1));
+//    }
+//  }
 }
 
 

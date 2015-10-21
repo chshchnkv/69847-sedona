@@ -80,11 +80,11 @@
 
               <div class="trip-dates">
                 <div class="input  trip-dates__item">
-                  <input type="text" id="dateCheckIn" name="date-check-in" required>
+                  <input type="text" id="dateCheckIn" name="date-check-in" placeholder="дд.мм.гггг" required>
                   <label for="dateCheckIn">Дата приезда:</label>
                 </div>
 
-                <div class="spinner    trip-dates__item">
+                <div class="spinner  trip-dates__item">
                   <span class="spinner__minus  button  button--light-grey  button--minus"></span>
                   <input type="number" name="stay-length" id="stayLength" min="1" max="999" value="1" required>
                   <span class="spinner__plus  button  button--light-grey  button--plus"></span>
@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="input  trip-dates__item">
-                  <input type="text" id="dateCheckOut" name="date-check-out" required>
+                  <input type="text" id="dateCheckOut" name="date-check-out" required readonly>
                   <label for="dateCheckOut">Дата отъезда:</label>
                 </div>
               </div>
@@ -276,11 +276,7 @@
     </script>
 <!--  html templates end  -->
 
-    <script src="node_modules/mustache/mustache.min.js"></script>
-    <script src="js/send.js"></script>
-    <script src="js/spinner.js"></script>
-    <script src="js/menu.js"></script>
-
+    <script src="js/scripts.js"></script>
     <script>
       var html = document.querySelector("html");
       html.classList.remove("no-js");
