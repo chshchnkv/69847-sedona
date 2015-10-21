@@ -12,6 +12,7 @@ $focused-border-width: 4px;
   @include colors($bg-color, $text);
   
   border: none;
+  border-radius: 0;
   
   @include transition($what: background-color);
   

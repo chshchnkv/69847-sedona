@@ -54,93 +54,6 @@
       });
     });
 
-    function validateForm() {
-      var res = false;
-      var emptyRequiredElements = document.querySelectorAll("input:invalid");
-      console.log(emptyRequiredElements);
-      res = emptyRequiredElements.length == 0;
-
-      if (res) {
-        res = areDatesValid();
-      }
-
-      return res;
-    }
-
-    function areDatesValid() {
-      return (moment(checkInInput.value, "DD.MM.YYYY").isValid() && !isNaN(stayDaysInput.value));
-    }
-
-    stayDaysInput.addEventListener("change", function () {
-      updateCheckOutDate();
-    });
-
-    checkInInput.addEventListener("change", function () {
-      updateCheckOutDate();
-    })
-
-
-    function updateCheckOutDate() {
-
-      if (!areDatesValid()) {
-        checkInInput.value = moment().format("L");
-      }
-
-      var checkInDate = moment(checkInInput.value, "DD.MM.YYYY");
-      var daysStay = Number(stayDaysInput.value);
-      var checkOutDate = checkInDate.add(daysStay, "days");
-      checkOutInput.value = checkOutDate.format("L");
-    }
-
-    function request(data, url, callback_func) {
-      var xhr = new XMLHttpRequest();
-      var time = (new Date()).getTime();
-      var sendUrl = url + "?" +time;
-
-      xhr.open("post", sendUrl);
-      xhr.addEventListener("readystatechange", function () {
-        if (xhr.readyState == 4) {
-          callback_func(xhr.responseText);
-        }
-      });
-
-      xhr.send(data);
-    }
-
-    function preview(file) {
-      var reader = new FileReader();
-      reader.addEventListener("load", function (event) {
-        var html = Mustache.render(template, {
-          "image": event.target.result,
-          "name": file.name
-        });
-
-        var li = document.createElement("li");
-        li.classList.add("gallery__item");
-        li.innerHTML = html;
-
-        galleryArea.appendChild(li);
-
-        li.querySelector(".gallery__remove-item-link").addEventListener("click", function (event) {
-          event.preventDefault();
-          removePreview(li);
-        });
-
-        photoQueue.push({"file": file, "li": li});
-      });
-
-      reader.readAsDataURL(file);
-    }
-
-    function removePreview(li) {
-      photoQueue = photoQueue.filter(function (element){
-        return element.li != li;
-      });
-
-      li.parentNode.removeChild(li);
-    }
-
-
     // добавление/удаление путешественника  
     travelersCountInput.addEventListener("change", function (event) {
       var currentTravelersCount = document.querySelectorAll(".travelers__item").length;
@@ -158,26 +71,111 @@
       } else if (change < 0) {
         removeTravelers(needCount);
       }
-
     });
+  }
 
-    function addTraveler(id){
-      var html = Mustache.render(travelerTemplate, {"id": id});
+  function validateForm() {
+    var res = false;
+    var emptyRequiredElements = document.querySelectorAll("input:invalid");
+    console.log(emptyRequiredElements);
+    res = emptyRequiredElements.length == 0;
 
-      var li = document.createElement("li");
-      li.classList.add("travelers__item");
-      li.innerHTML = html;
-
-      travelersArea.appendChild(li);
+    if (res) {
+      res = areDatesValid();
     }
 
-    function removeTravelers(startingId) {
-      var currentTravelersCount = document.querySelectorAll(".travelers__item").length;
+    return res;
+  }
 
-      for (var i=currentTravelersCount; i>startingId; i--) {
-        var lastTraveler = travelersArea.querySelector(".travelers__item:last-child");
-        travelersArea.removeChild(lastTraveler);
+  function areDatesValid() {
+    return (moment(checkInInput.value, "DD.MM.YYYY").isValid() && !isNaN(stayDaysInput.value));
+  }
+
+  stayDaysInput.addEventListener("change", function () {
+    updateCheckOutDate();
+  });
+
+  checkInInput.addEventListener("change", function () {
+    updateCheckOutDate();
+  })
+
+
+  function updateCheckOutDate() {
+
+    if (!areDatesValid()) {
+      checkInInput.value = moment().format("L");
+    }
+
+    var checkInDate = moment(checkInInput.value, "DD.MM.YYYY");
+    var daysStay = Number(stayDaysInput.value);
+    var checkOutDate = checkInDate.add(daysStay, "days");
+    checkOutInput.value = checkOutDate.format("L");
+  }
+
+  function request(data, url, callback_func) {
+    var xhr = new XMLHttpRequest();
+    var time = (new Date()).getTime();
+    var sendUrl = url + "?" +time;
+
+    xhr.open("post", sendUrl);
+    xhr.addEventListener("readystatechange", function () {
+      if (xhr.readyState == 4) {
+        callback_func(xhr.responseText);
       }
+    });
+
+    xhr.send(data);
+  }
+
+  function preview(file) {
+    var reader = new FileReader();
+    reader.addEventListener("load", function (event) {
+      var html = Mustache.render(template, {
+        "image": event.target.result,
+        "name": file.name
+      });
+
+      var li = document.createElement("li");
+      li.classList.add("gallery__item");
+      li.innerHTML = html;
+
+      galleryArea.appendChild(li);
+
+      li.querySelector(".gallery__remove-item-link").addEventListener("click", function (event) {
+        event.preventDefault();
+        removePreview(li);
+      });
+
+      photoQueue.push({"file": file, "li": li});
+    });
+
+    reader.readAsDataURL(file);
+  }
+
+  function removePreview(li) {
+    photoQueue = photoQueue.filter(function (element){
+      return element.li != li;
+    });
+
+    li.parentNode.removeChild(li);
+  }
+
+  function addTraveler(id){
+    var html = Mustache.render(travelerTemplate, {"id": id});
+
+    var li = document.createElement("li");
+    li.classList.add("travelers__item");
+    li.innerHTML = html;
+
+    travelersArea.appendChild(li);
+  }
+
+  function removeTravelers(startingId) {
+    var currentTravelersCount = document.querySelectorAll(".travelers__item").length;
+
+    for (var i=currentTravelersCount; i>startingId; i--) {
+      var lastTraveler = travelersArea.querySelector(".travelers__item:last-child");
+      travelersArea.removeChild(lastTraveler);
     }
   }
 })();

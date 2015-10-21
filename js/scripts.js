@@ -87,20 +87,19 @@ llll:"ddd, D MMM YYYY HH:mm"},calendar:{sameDay:"[Hôm nay lúc] LT",nextDay:"[N
     for (var i=0; i<modals.length; i++) {
       initModal(modals[i]);
     }
-    
-    function initModal(modal) {
-      var closeButtons = modal.querySelectorAll(".button");
-      
-      for (var i=0; i<closeButtons.length; i++) {
-        initButton(closeButtons[i]);
-      }
-            
-      function initButton (button) {
-        button.addEventListener("click", function(event) {
-          event.preventDefault();
-          modal.classList.toggle("modal--show");
-        })
-      }
+  }
+  function initModal(modal) {
+    var closeButtons = modal.querySelectorAll(".button");
+
+    for (var i=0; i<closeButtons.length; i++) {
+      initButton(closeButtons[i]);
+    }
+
+    function initButton (button) {
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+        modal.classList.toggle("modal--show");
+      })
     }
   }
 })();
@@ -160,93 +159,6 @@ llll:"ddd, D MMM YYYY HH:mm"},calendar:{sameDay:"[Hôm nay lúc] LT",nextDay:"[N
       });
     });
 
-    function validateForm() {
-      var res = false;
-      var emptyRequiredElements = document.querySelectorAll("input:invalid");
-      console.log(emptyRequiredElements);
-      res = emptyRequiredElements.length == 0;
-
-      if (res) {
-        res = areDatesValid();
-      }
-
-      return res;
-    }
-
-    function areDatesValid() {
-      return (moment(checkInInput.value, "DD.MM.YYYY").isValid() && !isNaN(stayDaysInput.value));
-    }
-
-    stayDaysInput.addEventListener("change", function () {
-      updateCheckOutDate();
-    });
-
-    checkInInput.addEventListener("change", function () {
-      updateCheckOutDate();
-    })
-
-
-    function updateCheckOutDate() {
-
-      if (!areDatesValid()) {
-        checkInInput.value = moment().format("L");
-      }
-
-      var checkInDate = moment(checkInInput.value, "DD.MM.YYYY");
-      var daysStay = Number(stayDaysInput.value);
-      var checkOutDate = checkInDate.add(daysStay, "days");
-      checkOutInput.value = checkOutDate.format("L");
-    }
-
-    function request(data, url, callback_func) {
-      var xhr = new XMLHttpRequest();
-      var time = (new Date()).getTime();
-      var sendUrl = url + "?" +time;
-
-      xhr.open("post", sendUrl);
-      xhr.addEventListener("readystatechange", function () {
-        if (xhr.readyState == 4) {
-          callback_func(xhr.responseText);
-        }
-      });
-
-      xhr.send(data);
-    }
-
-    function preview(file) {
-      var reader = new FileReader();
-      reader.addEventListener("load", function (event) {
-        var html = Mustache.render(template, {
-          "image": event.target.result,
-          "name": file.name
-        });
-
-        var li = document.createElement("li");
-        li.classList.add("gallery__item");
-        li.innerHTML = html;
-
-        galleryArea.appendChild(li);
-
-        li.querySelector(".gallery__remove-item-link").addEventListener("click", function (event) {
-          event.preventDefault();
-          removePreview(li);
-        });
-
-        photoQueue.push({"file": file, "li": li});
-      });
-
-      reader.readAsDataURL(file);
-    }
-
-    function removePreview(li) {
-      photoQueue = photoQueue.filter(function (element){
-        return element.li != li;
-      });
-
-      li.parentNode.removeChild(li);
-    }
-
-
     // добавление/удаление путешественника  
     travelersCountInput.addEventListener("change", function (event) {
       var currentTravelersCount = document.querySelectorAll(".travelers__item").length;
@@ -264,26 +176,111 @@ llll:"ddd, D MMM YYYY HH:mm"},calendar:{sameDay:"[Hôm nay lúc] LT",nextDay:"[N
       } else if (change < 0) {
         removeTravelers(needCount);
       }
-
     });
+  }
 
-    function addTraveler(id){
-      var html = Mustache.render(travelerTemplate, {"id": id});
+  function validateForm() {
+    var res = false;
+    var emptyRequiredElements = document.querySelectorAll("input:invalid");
+    console.log(emptyRequiredElements);
+    res = emptyRequiredElements.length == 0;
 
-      var li = document.createElement("li");
-      li.classList.add("travelers__item");
-      li.innerHTML = html;
-
-      travelersArea.appendChild(li);
+    if (res) {
+      res = areDatesValid();
     }
 
-    function removeTravelers(startingId) {
-      var currentTravelersCount = document.querySelectorAll(".travelers__item").length;
+    return res;
+  }
 
-      for (var i=currentTravelersCount; i>startingId; i--) {
-        var lastTraveler = travelersArea.querySelector(".travelers__item:last-child");
-        travelersArea.removeChild(lastTraveler);
+  function areDatesValid() {
+    return (moment(checkInInput.value, "DD.MM.YYYY").isValid() && !isNaN(stayDaysInput.value));
+  }
+
+  stayDaysInput.addEventListener("change", function () {
+    updateCheckOutDate();
+  });
+
+  checkInInput.addEventListener("change", function () {
+    updateCheckOutDate();
+  })
+
+
+  function updateCheckOutDate() {
+
+    if (!areDatesValid()) {
+      checkInInput.value = moment().format("L");
+    }
+
+    var checkInDate = moment(checkInInput.value, "DD.MM.YYYY");
+    var daysStay = Number(stayDaysInput.value);
+    var checkOutDate = checkInDate.add(daysStay, "days");
+    checkOutInput.value = checkOutDate.format("L");
+  }
+
+  function request(data, url, callback_func) {
+    var xhr = new XMLHttpRequest();
+    var time = (new Date()).getTime();
+    var sendUrl = url + "?" +time;
+
+    xhr.open("post", sendUrl);
+    xhr.addEventListener("readystatechange", function () {
+      if (xhr.readyState == 4) {
+        callback_func(xhr.responseText);
       }
+    });
+
+    xhr.send(data);
+  }
+
+  function preview(file) {
+    var reader = new FileReader();
+    reader.addEventListener("load", function (event) {
+      var html = Mustache.render(template, {
+        "image": event.target.result,
+        "name": file.name
+      });
+
+      var li = document.createElement("li");
+      li.classList.add("gallery__item");
+      li.innerHTML = html;
+
+      galleryArea.appendChild(li);
+
+      li.querySelector(".gallery__remove-item-link").addEventListener("click", function (event) {
+        event.preventDefault();
+        removePreview(li);
+      });
+
+      photoQueue.push({"file": file, "li": li});
+    });
+
+    reader.readAsDataURL(file);
+  }
+
+  function removePreview(li) {
+    photoQueue = photoQueue.filter(function (element){
+      return element.li != li;
+    });
+
+    li.parentNode.removeChild(li);
+  }
+
+  function addTraveler(id){
+    var html = Mustache.render(travelerTemplate, {"id": id});
+
+    var li = document.createElement("li");
+    li.classList.add("travelers__item");
+    li.innerHTML = html;
+
+    travelersArea.appendChild(li);
+  }
+
+  function removeTravelers(startingId) {
+    var currentTravelersCount = document.querySelectorAll(".travelers__item").length;
+
+    for (var i=currentTravelersCount; i>startingId; i--) {
+      var lastTraveler = travelersArea.querySelector(".travelers__item:last-child");
+      travelersArea.removeChild(lastTraveler);
     }
   }
 })();
@@ -296,85 +293,85 @@ llll:"ddd, D MMM YYYY HH:mm"},calendar:{sameDay:"[Hôm nay lúc] LT",nextDay:"[N
     for (var i = 0; i < spinners.length; i++) {
       initSpinner(spinners[i]);
     }
+  }
+  
+  function initSpinner(container) {
+    var input = container.querySelector("input");
+    var minus = container.querySelector(".spinner__minus");
+    var plus = container.querySelector(".spinner__plus");
 
-    function initSpinner(container) {
-      var input = container.querySelector("input");
-      var minus = container.querySelector(".spinner__minus");
-      var plus = container.querySelector(".spinner__plus");
+    minus.addEventListener("click", function () {
+      changeNumber(false);
+    });
 
-      minus.addEventListener("click", function () {
-        changeNumber(false);
-      });
+    plus.addEventListener("click", function () {
+      changeNumber(true);
+    });
 
-      plus.addEventListener("click", function () {
-        changeNumber(true);
-      });
+    input.addEventListener("keypress", function(event) {
+      if (event.ctrlKey || event.altKey || event.metaKey) return;
 
-      input.addEventListener("keypress", function(event) {
-        if (event.ctrlKey || event.altKey || event.metaKey) return;
+      var chr = getChar(event);
+      if (chr == null) return;
 
-        var chr = getChar(event);
-        if (chr == null) return;
+        if (chr < '0' || chr > '9') {
+          return false;
+        }    
+    });
 
-          if (chr < '0' || chr > '9') {
-            return false;
-          }    
-      });
-
-      // event.type должен быть keypress
-      function getChar(event) {
-        if (event.which == null) { // IE
-          if (event.keyCode < 32) return null; // спец. символ
-          return String.fromCharCode(event.keyCode)
-        }
-
-        if (event.which != 0 && event.charCode != 0) { // все кроме IE
-          if (event.which < 32) return null; // спец. символ
-          return String.fromCharCode(event.which); // остальные
-        }
-
-        return null; // спец. символ
+    // event.type должен быть keypress
+    function getChar(event) {
+      if (event.which == null) { // IE
+        if (event.keyCode < 32) return null; // спец. символ
+        return String.fromCharCode(event.keyCode)
       }
 
-      function changeNumber(operation) {
-        var value = Number(input.value);
-        var step = Number(input.step);
-        var changed = false;
+      if (event.which != 0 && event.charCode != 0) { // все кроме IE
+        if (event.which < 32) return null; // спец. символ
+        return String.fromCharCode(event.which); // остальные
+      }
 
-        if (isNaN(value)) {
-          value = input.min;
+      return null; // спец. символ
+    }
+
+    function changeNumber(operation) {
+      var value = Number(input.value);
+      var step = Number(input.step);
+      var changed = false;
+
+      if (isNaN(value)) {
+        value = input.min;
+      }
+
+      if (isNaN(step) || (step === 0)) {
+        step = 1;
+      }
+
+      if (operation) {
+        value += step;
+
+        if (value <= input.max) {
+          input.value = value;
+          changed = true;
         }
 
-        if (isNaN(step) || (step === 0)) {
-          step = 1;
+      } else {        
+        value -= step;
+
+        if (value >= input.min) {
+          input.value = value;
+          changed = true;
         }
+      }
 
-        if (operation) {
-          value += step;
-
-          if (value <= input.max) {
-            input.value = value;
-            changed = true;
-          }
-
-        } else {        
-          value -= step;
-
-          if (value >= input.min) {
-            input.value = value;
-            changed = true;
-          }
+      if (changed) {
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            input.dispatchEvent(evt);
         }
-
-        if (changed) {
-          if ("createEvent" in document) {
-              var evt = document.createEvent("HTMLEvents");
-              evt.initEvent("change", false, true);
-              input.dispatchEvent(evt);
-          }
-          else {
-              input.fireEvent("onchange");
-          }
+        else {
+            input.fireEvent("onchange");
         }
       }
     }
@@ -382,20 +379,24 @@ llll:"ddd, D MMM YYYY HH:mm"},calendar:{sameDay:"[Hôm nay lúc] LT",nextDay:"[N
 })();
 (function(){
 
-  var menuToggle = document.querySelector(".main-navigation__toggle");
   var menuItems = document.querySelectorAll(".main-navigation__item");
+  
+  if (menuItems.length > 0) {
+    var menuToggle = document.querySelector(".main-navigation__toggle");
+    
+    menuToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      menuToggle.classList.toggle("main-navigation__toggle--close");
 
-  menuToggle.addEventListener("click", function (event) {
-    event.preventDefault();
-    menuToggle.classList.toggle("main-navigation__toggle--close");
-
-    for (var i = 0; i < menuItems.length; i++) {
-      var menuItem = menuItems[i];
-
-      if (!menuItem.classList.contains("main-navigation__item--logo")) {
-        menuItem.classList.toggle("main-navigation__item--hidden");
+      for (var i = 0; i < menuItems.length; i++) {        
+        initMenuItem(menuItems[i]);
       }
+    });
+  }
+  
+  function initMenuItem(item) {
+    if (!item.classList.contains("main-navigation__item--logo")) {
+      item.classList.toggle("main-navigation__item--hidden");
     }
-  })
-
+  }
 })();
