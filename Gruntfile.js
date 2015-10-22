@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     sass: {
       style: {
         files: {
-          "css/style.css": "sass/style.scss"
+          "build/css/style.css": "src/sass/style.scss"
         }
       }
     },
@@ -21,14 +21,14 @@ module.exports = function(grunt) {
         ]
       },
       style: {
-        src: 'css/*.css'
+        src: 'build/css/*.css'
       }
     },
     
     cmq: {
       style: {
         files: {
-          "css/style.css": ["css/style.css"]
+          "build/css/style.css": ["build/css/style.css"]
         }
       }
     },
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          "css/style.min.css": ["css/style.css"]
+          "build/css/style.min.css": ["build/css/style.css"]
         }
       }
     },
@@ -50,12 +50,51 @@ module.exports = function(grunt) {
         src: [
           'node_modules/mustache/mustache.min.js',
           'node_modules/moment/min/moment-with-locales.min.js',
-          'js/modals.js',
-          'js/send.js',
-          'js/spinner.js',
-          'js/menu.js'
+          'src/js/menu.js',
+          'src/js/modals.js',
+          'src/js/send.js',
+          'src/js/spinner.js'
         ],
-        dest: 'js/scripts.js'
+        dest: 'build/js/scripts.js'
+      }
+    },
+    
+    uglify: {
+      main: {
+        files: {
+          'build/js/scripts.min.js': ['build/js/scripts.js']
+        }
+      }
+    },
+    
+    clean: {
+      build: ["build"]
+    },
+    
+    copy: {
+      build: {
+        files: [{
+          expand: true,
+          cwd: "src",
+          src: [
+            "font/**",
+            "img/**",
+            "*.html"
+          ],
+          dest: "build"
+        }]
+      }
+    },
+    
+    imagemin: {
+      images: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          src: ["build/img/**/*.{png,jpg,gif,svg}"]
+        }] 
       }
     },
     
@@ -72,8 +111,8 @@ module.exports = function(grunt) {
       },
 
       style: {
-        files: ['sass/**/*.scss', 'sass/*.scss', 'js/**/*.js', 'js/*.js'],
-        tasks: ['sass', 'cmq', 'postcss', 'cssmin', 'concat'],
+        files: ['src/sass/**/*.scss', 'src/sass/*.scss', 'src/js/**/*.js', 'js/*.js', 'src/*.html'],
+        tasks: ['clean', 'copy', 'sass', 'cmq', 'postcss', 'cssmin', 'imagemin', 'concat','uglify'],
         options: {
           spawn: false,
           livereload: true
@@ -82,6 +121,18 @@ module.exports = function(grunt) {
     }
     
   };
+  
+  grunt.registerTask("build", [
+    "clean",
+    "copy",
+    "sass",
+    "cmq",
+    "postcss",
+    "cssmin",
+    "imagemin",
+    "concat",
+    "uglify"
+  ]);
 
   config = require('./.gosha')(grunt, config);
 

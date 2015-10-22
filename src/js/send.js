@@ -1,7 +1,7 @@
 (function () {
   
   if (!("FormData" in window)) {
-    return;
+    return false;
   }
   
   if (document.querySelectorAll(".review-form").length > 0) {
@@ -25,6 +25,14 @@
   //  //init dates
     moment.locale("ru");
     updateCheckOutDate();
+    
+    stayDaysInput.addEventListener("change", function () {
+      updateCheckOutDate();
+    });
+
+    checkInInput.addEventListener("change", function () {
+      updateCheckOutDate();
+    });    
 
     form.querySelector("#choosePhotos").addEventListener("change", function (event) {
       var files = this.files;
@@ -90,15 +98,6 @@
   function areDatesValid() {
     return (moment(checkInInput.value, "DD.MM.YYYY").isValid() && !isNaN(stayDaysInput.value));
   }
-
-  stayDaysInput.addEventListener("change", function () {
-    updateCheckOutDate();
-  });
-
-  checkInInput.addEventListener("change", function () {
-    updateCheckOutDate();
-  })
-
 
   function updateCheckOutDate() {
 
