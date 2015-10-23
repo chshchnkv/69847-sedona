@@ -65,7 +65,15 @@ blockquote {
   text-transform: $text-transform;
 
   border-left: 2px solid $blue;
-    
+  
+  @media (min-width: $screen_tablet) {
+    padding-left: 30px;
+  }
+  
+  @media (min-width: $screen_desktop) {
+    padding-left: 35px;
+  }
+  
   cite {
     font-size: $font-size;
     line-height: 1.8;
@@ -92,8 +100,8 @@ blockquote {
     
   &--post {
     @media (min-width: $screen_tablet) {
-      padding-left: 45px;
-      padding-right: 45px;
+      padding-left: 40px;
+      padding-right: 40px;
     }
     
     @media (min-width: $screen_desktop) {
