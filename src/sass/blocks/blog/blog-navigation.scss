@@ -11,6 +11,8 @@
   background-color: $text-color--light;
   
   @media (min-width: $screen_tablet) {
+    justify-content: space-between;
+    padding: 0;
     border: none;
   }
   
@@ -20,12 +22,20 @@
     margin-right: $gutter_px;
     
     @media (min-width: $screen_tablet) {
+      flex-basis: 210px;
+      flex-grow: 0;
+      
       margin-right: 0;
     }
   }
   
   &__next {
     flex-grow: 1;
+    
+    @media (min-width: $screen_tablet) {
+      flex-basis: 210px;
+      flex-grow: 0;
+    }
   }
   
   &__content {
@@ -36,10 +46,11 @@
     width: 100%;
     
     @media (min-width: $screen_tablet) {
+      flex-grow: 0;
+      flex-basis: 210px;
       order: 0;
       
       width: auto;
-      flex-grow: 1;
       margin-top: 0;
       margin-right: $gutter_px;
       margin-left: $gutter_px;

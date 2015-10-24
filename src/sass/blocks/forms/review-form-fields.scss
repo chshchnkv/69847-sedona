@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 20px 0;
+  padding: 20px;
   text-transform: $text-transform;
 
   border: none;
@@ -15,7 +15,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    padding: 45px 0 80px;
+    margin-bottom: 70px;
+    padding: 0;
+    border-top:  none;
   }
 
   &--travelers {
@@ -36,11 +38,16 @@
   }
 
   &--impressions {
+    
     @media (min-width: $screen_tablet) {
-      padding-top: 70px;
-      padding-bottom: 80px - $radio-size;
+      
+      margin-bottom: 40px;
+      
+      .review-form-fields__header {
+        margin-bottom: 60px;
+      }
     }
-
+    
     @media (min-width: $screen_desktop) {
       justify-content: space-around;
     }
@@ -48,39 +55,79 @@
 
   &--sightseeing {
     @media (min-width: $screen_tablet) {
-      padding-top: 70px;
-      padding-bottom: 80px - $radio-size;
+      
+      margin-bottom: 20px;
+      
+      .review-form-fields__header {
+        margin-bottom: 50px;
+      }
     }
   }
 
   &--gallery {
     flex-direction: column;
+    padding-bottom: 0;
     
     @media (min-width: $screen_tablet) {
       flex-direction: column;
-      padding-bottom: 0;
+      margin-bottom: 0;
+
+      .review-form-fields__header {
+        margin-bottom: 60px;
+      }
     }
   }
 
   &__header {
+    position: relative;
+    
+    width: 100%;
     margin-bottom: 30px;
-
-    font-size: $font-size--h2;
-    font-weight: $headings-weight;
-
+    
     text-align: center;
+    
+    h2 {
+      margin: 0;
+      padding: 0;
+      
+      font-size: $font-size--h2;
+      font-weight: $headings-weight;
+      line-height: $headings-line-height;
 
-    @media (min-width: $screen_tablet) {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      @include translateXY(-50%, -50%);
+      text-align: center;
 
-      width: 400px;
+      @media (min-width: $screen_tablet) {
+        position: relative;
+        z-index: 2;
 
-      padding: 0 40px;
+        display: inline-block;
+        vertical-align: top;
 
-      background-color: $light;
+        width: 400px;
+        text-align: center;
+
+        padding: 0 40px;
+
+        background-color: $light;
+      }
+    }
+    
+    &:before {
+      
+      @media (min-width: $screen_tablet) {
+        content: "";
+        
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        @include translateY(-50%);
+
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-bottom: 1px solid $grey--dark;        
+      }
     }
   }
 }

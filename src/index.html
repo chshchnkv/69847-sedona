@@ -19,7 +19,10 @@
             <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--info"><a href="#">Информация</a></li>
             <li class="main-navigation__item  main-navigation__item--logo">
               <a href="index.html">
-                <img class="main-navigation__logo" src="img/logo-sedona@1x.png" srcset="img/logo-sedona@2x.png 2x, img/logo-sedona@3x.png 3x" alt="City of Sedona" width="67" height="56">
+                <picture>
+                  <source srcset="img/logo-sedona@3x.png 3x, img/logo-sedona@2x.png 2x, img/logo-sedona@1x.png 1x">
+                  <img class="main-navigation__logo" src="img/logo-sedona@1x.png" alt="City of Sedona" width="67" height="56">
+                </picture>
               </a>
             </li>
             <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
@@ -53,7 +56,10 @@
           </div>
 
           <div class="features__item  features__item--photo">
-            <img src="img/photo-city@1x.jpg" srcset="img/photo-city@2x.jpg 2x" width="800" height="400" alt="City of Sedona">
+            <picture>
+              <source srcset="img/photo-city@2x.jpg 2x, img/photo-city@1x.jpg 1x">
+              <img src="img/photo-city@1x.jpg" width="800" height="400" alt="City of Sedona">
+            </picture>
           </div>
 
         </div>
@@ -88,7 +94,10 @@
           </div>
 
           <div class="features__item  features__item--photo">
-            <img src="img/photo-bridge@1x.jpg" srcset="img/photo-bridge@2x.jpg 2x" width="800" height="400" alt="City of Sedona">
+            <picture>
+              <source  srcset="img/photo-bridge@2x.jpg 2x, img/photo-bridge@1x.jpg 1x">
+              <img src="img/photo-bridge@1x.jpg" width="800" height="400" alt="City of Sedona">
+            </picture>
           </div>
 
         </div>
@@ -123,7 +132,9 @@
           <a class="button  button--blue" href="form.html">Найти гостиницу</a>
         </div>
 
-        <div class="map"></div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d838731.6574144282!2d-111.59240635030078!3d34.79850587052663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2sSedona%2C+AZ%2C+USA!5e0!3m2!1sen!2sru!4v1429700350404" width="768" height="350" style="border:0"></iframe>
+        </div>
 
       </main>
 

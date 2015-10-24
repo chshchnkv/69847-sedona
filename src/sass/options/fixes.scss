@@ -1,0 +1,14 @@
+.firefox-space-around-fix {
+  
+  @media (min-width: $screen_tablet) {
+    display: flex;
+    justify-content: space-between;    
+  }
+  
+  width: 100%;
+  
+  @media (min-width: $screen_desktop) {
+    justify-content: space-around;
+    margin: 0 10%;
+  }
+}

@@ -1,8 +1,19 @@
 .map {
+  position: relative;
+  overflow: hidden;
   height: 350px;
   
-  background-color: $text-color--light;
+  background-color: #d7dec1;
   background-image: url("../img/map.jpg");
   background-size: cover;
   background-position: center;
+  
+  iframe {
+    position: absolute;
+    @include centerHV;
+    
+    width: 100%;
+    height: 100%;
+    
+  }
 }

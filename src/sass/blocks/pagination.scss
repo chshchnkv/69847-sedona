@@ -1,8 +1,50 @@
 .pagination {
   
-  padding: 45px 20px;
+  padding: 37px 20px;
   
+  border-top: 2px solid $borders;
   border-bottom: 2px solid $borders;
+  
+  @media (min-width: $screen_tablet) {
+    display: flex;
+    align-items: center;
+    
+    padding-bottom: 0;
+    
+    border: none;
+  }
+  
+  @media (min-width: $screen_desktop) {
+    justify-content: space-around;
+    
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  &__header {
+    display: none;
+    
+    @media (min-width: $screen_tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      margin-right: 70px;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      flex-basis: 33%;
+      margin-right: 0;
+    }
+    
+    h1 {
+      margin: 0;
+      padding: 0;
+      
+      font-size: $font-size--h1;
+      text-transform: $text-transform;
+    }
+  }
   
   &__list {
     @include list-init;
@@ -10,33 +52,37 @@
     display: flex;
     flex-direction: row;  
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-between;
-  }
-  
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     
-    margin-right: 16px;
-    margin-bottom: 16px;
-    
-    a {
-      display: block;
+    @media (min-width: $screen_tablet) {
+      justify-content: flex-start;
       
-      padding: (5.8rem - $font-size--h1)/2 20px;
-                  
-      @include colors($blue, $text-color--light);
-      
-      font-size: $font-size--h1;
-      line-height: 1;
-      font-weight: $headings-weight;
-      text-decoration: none;
-      text-transform: $text-transform;
-      text-align: center;
     }
     
+    @media (min-width: $screen_desktop) {
+      flex-basis: 67%;
+      
+      padding-left: 30px;
+    }
+  }
+  
+  &__item {    
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    
+    @media (min-width: $screen_tablet) {
+      margin-right: 8px;
+    }
+
+    .button {
+      min-width: 58px;
+      min-height: 58px;
+      
+      font-size: $font-size--h1;
+      line-height: normal;
+    }
+
     &--active {
       
       a {
