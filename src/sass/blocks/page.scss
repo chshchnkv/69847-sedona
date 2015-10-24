@@ -97,6 +97,13 @@ blockquote {
 .container-inner {
   padding-left: $mobile-padding;
   padding-right: $mobile-padding;
+  
+  &--blog {
+    @media (min-width: $screen_tablet) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
     
   &--post {
     @media (min-width: $screen_tablet) {

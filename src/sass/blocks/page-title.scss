@@ -57,7 +57,12 @@
   }
   
   &--blog {
-    padding-bottom: 30px;
+    padding-bottom: 50px 15px 30px;
+    
+    @media (min-width: $screen_tablet) {
+      padding-top: 75px;
+      padding-bottom: 55px;
+    }
     
     h1 {
       font-size: $font-size-giant;
