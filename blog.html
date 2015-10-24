@@ -2,42 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Блог шерифа</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
-    
-     <header class="page-header">
-        <nav class="main-navigation">
-          <span class="main-navigation__toggle  main-navigation__toggle--close"></span>
-          <ul class="main-navigation__list  main-navigation__list--opened">
-            <li class="main-navigation__item  main-navigation__item--state-map"><a href="#">Карта штата</a></li>
-            <li class="main-navigation__item  main-navigation__item--info"><a href="#">Информация</a></li>
-            <li class="main-navigation__item main-navigation__item--logo">
-              <a href="index.html">
-                <img class="main-navigation__logo" src="img/logo-sedona@1x.png" srcset="img/logo-sedona@2x.png 2x, img/logo-sedona@3x.png 3x" alt="City of Sedona" width="67" height="56">
-              </a>
-            </li>
-            <li class="main-navigation__item  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
-            <li class="main-navigation__item  main-navigation__item--hotels"><a href="#">Гостиницы</a></li>
-          </ul>
-        </nav>
-      </header>
-    
+
+    <header class="page-header">
+      <nav class="main-navigation">
+        <span class="main-navigation__toggle"></span>
+        <ul class="main-navigation__list">
+          <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--state-map"><a href="#">Карта штата</a></li>
+          <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--info"><a href="#">Информация</a></li>
+          <li class="main-navigation__item  main-navigation__item--logo">
+            <a href="index.html">
+              <img class="main-navigation__logo" src="img/logo-sedona@1x.png" srcset="img/logo-sedona@2x.png 2x, img/logo-sedona@3x.png 3x" alt="City of Sedona" width="67" height="56">
+            </a>
+          </li>
+          <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--photo-video"><a href="#">Фото и видео</a></li>
+          <li class="main-navigation__item  main-navigation__item--hidden  main-navigation__item--hotels"><a href="#">Гостиницы</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
       <div class="welcome  welcome--small">
         <img class="welcome__text-sedona  welcome__text-sedona--small" src="img/text-sedona.svg" alt="Sedona" width="460" height="80">
       </div>
-      
+
       <section class="page-title  page-title--inner  page-title--blog">
         <h1>Блог шерифа</h1>
         <p>Седона удивительный город! Горы здесь красного цвета, а местный шериф ведет блог и общается на форумах.</p>
       </section>
-      
-       
+
+
       <div class="posts">
-         
+
         <article class="post  posts__item">
           <header class="post__header">
             <a href="post.html"><h2>Внимание! Сбежала моя домашняя анаконда</h2></a>
@@ -49,8 +50,8 @@
             <a href="#" class="post__date"><time datetime="2015-09-20">Позавчера</time></a><a href="#" class="post__category">Происшествия</a>
           </footer>
         </article>
-        
-        
+
+
         <article class="post  posts__item">
           <header class="post__header">
              <a href="#"><h2>Принят антитабачный закон штата</h2></a>
@@ -62,8 +63,8 @@
             <a href="#" class="post__date"><time datetime="2015-09-19">2 дня назад</time></a><a href="#" class="post__category">Законы</a>
           </footer>
         </article>
-        
-        
+
+
         <article class="post  posts__item">
           <header class="post__header">
              <a href="#"><h2>Маньяк задержан, даёт показания</h2></a>
@@ -75,8 +76,8 @@
             <a href="#" class="post__date"><time datetime="2015-09-18">3 дня назад</time></a><a href="#" class="post__category">Происшествия</a>
           </footer>
         </article>
-        
-        
+
+
         <article class="post  posts__item">
           <header class="post__header">
             <a href="#"><h2>Водопад закрыт на реконструкцию</h2></a>
@@ -88,8 +89,8 @@
             <a href="#" class="post__date"><time datetime="2015-09-15">Неделю назад</time></a><a href="#" class="post__category">Интересное</a>
           </footer>
         </article>
-        
-        
+
+
         <article class="post  posts__item">
           <header class="post__header">
             <a href="#"><h2>Отрылся новый стейкхаус «Горный бык»</h2></a>
@@ -101,8 +102,8 @@
             <a href="#" class="post__date"><time datetime="2015-08-22">Месяц назад</time></a><a href="#" class="post__category">Еда</a>
           </footer>
         </article>
-        
-        
+
+
         <article class="post  posts__item">
           <header class="post__header">
             <a href="#"><h2>Прогноз погоды на ближайшие выходные</h2></a>
@@ -114,10 +115,10 @@
             <a href="#" class="post__date"><time datetime="2014-09-22">Год назад</time></a><a href="#" class="post__category">Погода</a>
           </footer>
         </article>
-        
+
       </div>
-      
-      
+
+
       <div class="pagination">
         <ul class="pagination__list">
           <li class="pagination__item pagination__item--active"><a href="#">1</a></li>
@@ -128,13 +129,13 @@
         </ul>
       </div>
     </main>
-    
+
     <footer class="page-footer">
-       
+
         <div class="page-footer__hashtag">
           <a href="#" class="hashtag">#VisitSedona</a>
         </div>
-        
+
         <div class="page-footer__social">
           <ul class="social-links">
             <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-twitter"></i></a></li>
@@ -142,7 +143,7 @@
             <li class="social-links__item"><a href="#" class="button  button--blue"><i class="icon-youtube"></i></a></li>
           </ul>
         </div>
-        
+
         <div class="page-footer__copyright">
           <a class="copyright" href="http://htmlacademy.ru">Разработано <svg class="htmlacademy-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="27px" height="34px" viewBox="0 0 26.943 34.09" enable-background="new 0 0 26.943 34.09" xml:space="preserve">
@@ -154,7 +155,10 @@
 	v10.02L13.472,31.85L1.925,24.979V15.127z"/>
 </svg> </a>
         </div>
-        
+
       </footer>
+
+      <script src="js/scripts.js"></script>
+
   </body>
 </html>
