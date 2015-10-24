@@ -79,6 +79,7 @@ $menu-v-padding: 20px;
       }
 
       @media (min-width: $screen_tablet) {
+        font-size: $font-size;
         color: $text-color;
 
         &:hover {
@@ -104,7 +105,12 @@ $menu-v-padding: 20px;
     border-bottom: 1px solid rgba(1,1,1,.2);
 
     @media (min-width: $screen_tablet) {
+      flex-basis: $screen_tablet / 5;
       border: none;
+    }
+    
+    @media (min-width: $screen_desktop) {
+      flex-basis: $screen_desktop / 5;
     }
 
     &:first-child {

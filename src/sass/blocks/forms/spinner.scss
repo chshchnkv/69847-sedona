@@ -8,7 +8,7 @@
   justify-content: space-between;
   
   margin-bottom: $margin-bottom;
-
+  
   &__minus {
     display: block;
     width: $input-min-width;
@@ -121,5 +121,12 @@
     @media (min-width: $screen_tablet) {
       width: 30%;
     }
+  }
+}
+
+.no-js {
+  .spinner__minus,
+  .spinner__plus {
+    display: none;
   }
 }

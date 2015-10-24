@@ -23,11 +23,13 @@
     margin-bottom: 40px;
   }
   
-  .button--blue {
+  .button {
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 19px;
+    padding-bottom: 17px;
+    
     font-size: $font-size--h1;
+    line-height: 1;
   }
   
 //  @media (min-width: $screen_tablet) {
