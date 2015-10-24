@@ -6,6 +6,14 @@ $gallery-delete-btn-size: $gallery-item-size / 2 - 5px;
   &__list {
     @include list-init;
     font-size: 0;
+    
+    padding-top: 50px;
+    padding-bottom: (50px - ($gallery-item-size / 2));
+    
+    @media (min-width: $screen_tablet) {
+      padding-top: 60px;
+      padding-bottom: 60px - ($gallery-item-size / 2);
+    }
   }
   
   &__item {
@@ -25,9 +33,6 @@ $gallery-delete-btn-size: $gallery-item-size / 2 - 5px;
     
     @media (min-width: $screen_tablet) {
       width: $gallery-item-size * 2;
-      
-      margin-right: $gallery-item-size;
-      margin-bottom: $gallery-item-size;
     }
   }
   

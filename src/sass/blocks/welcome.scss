@@ -8,6 +8,7 @@
   padding-bottom: 50px;
   
   background-image: url("../img/photo-background@1x.jpg");
+  background-color: #4f5558;
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -91,8 +92,7 @@
     bottom: 0;
     display: block;
     @include size(100%, 36px);
-    background-image: 
-      url("../img/intro-triangle.svg");
+    background-image: url("../img/intro-triangle.svg");
     background-size: auto 100%;
     background-position: center bottom;
     

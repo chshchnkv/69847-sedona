@@ -1,4 +1,6 @@
 .spinner {
+  position: relative;
+  
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -7,18 +9,19 @@
   
   margin-bottom: $margin-bottom;
 
-  .button--minus {
+  &__minus {
     display: block;
     width: $input-min-width;
   }
 
-  .button--plus {
+  &__plus {
     display: block;
     width: $input-min-width;
   }
 
-  input[type="number"] {    
-    @include input;
+  &__input {
+    position: relative;
+    
     @include required;
     
     width: $input-min-width;
@@ -27,23 +30,81 @@
     flex-shrink: 1;
 
     margin: 0 6px;
-
-    // скрываем кнопки 
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      appearance: none;
-      margin: 0; 
-    }
-    -moz-appearance: textfield;
-
+    
     @media (min-width: $screen_tablet) {
       margin: 0;
-
-      text-align: center;
     }
     
     @media (min-width: $screen_desktop) {
       margin: 0 6px;
+    }
+    
+    &:after {
+      content: "";
+      
+      position: absolute;
+      top: 0;
+      right: 0;
+      
+      display: inline-block;
+      vertical-align: top;
+      
+      height: 100%;
+      
+      padding: $offset;
+      
+      font-size: $font-size--h2;
+      color: transparentize($text-color, .7);
+      text-transform: lowercase;
+      
+      @media (min-width: $screen_tablet) {
+        display: none;
+      }
+
+      @media (min-width: $screen_desktop) {
+        display: inline-block;
+      }
+    }
+    
+    &--days {
+      &:after {
+        content: "дн."
+      }
+    }
+    
+    &--people {
+      &:after {
+        content: "чел.";
+      }
+    }
+    
+    input[type="number"] {
+      @include input;
+      
+      width: 100%;
+      padding-right: 50px;
+      
+      text-align: left;
+      
+      // скрываем кнопки 
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0; 
+      }
+      -moz-appearance: textfield;
+      
+      @media (min-width: $screen_tablet) {
+        padding-right: 20px;
+        
+        text-align: center;
+      }
+      
+      @media (min-width: $screen_desktop) {
+        padding-right: 50px;
+        
+        text-align: left;
+      }
     }
     
     ~ label {

@@ -10,32 +10,38 @@
     display: flex;
     flex-direction: row;  
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-between;
+    justify-content: flex-start;
+    
+    @media (min-width: $screen_tablet) {
+      justify-content: center;
+    }
   }
   
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  &__item {    
     margin-right: 16px;
     margin-bottom: 16px;
-    
-    a {
-      display: block;
-      
-      padding: (5.8rem - $font-size--h1)/2 20px;
-                  
-      @include colors($blue, $text-color--light);
+
+    .button {
+      min-width: 58px;
+      min-height: 58px;
       
       font-size: $font-size--h1;
-      line-height: 1;
-      font-weight: $headings-weight;
-      text-decoration: none;
-      text-transform: $text-transform;
-      text-align: center;
     }
+    
+//    a {
+//      display: block;
+//      
+//      padding: (5.8rem - $font-size--h1)/2 20px;
+//                  
+//      @include colors($blue, $text-color--light);
+//      
+//      font-size: $font-size--h1;
+//      line-height: 1;
+//      font-weight: $headings-weight;
+//      text-decoration: none;
+//      text-transform: $text-transform;
+//      text-align: center;
+//    }
     
     &--active {
       

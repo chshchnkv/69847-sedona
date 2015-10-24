@@ -42,7 +42,7 @@
           <form action="https://echo.htmlacademy.ru/adaptive" class="review-form" method="post">
 
             <div class="review-form-fields">
-              <header class="review-form-fields__header">Представьтесь, пожалуйста:</header>
+              <header class="review-form-fields__header"><h2>Представьтесь, пожалуйста:</h2></header>
 
               <div class="fio">
                 <div class="input  fio__item">
@@ -63,21 +63,23 @@
             </div>
 
             <div class="review-form-fields  review-form-fields--impressions">
-              <header class="review-form-fields__header">Ваше общее впечатление:</header>
+              <header class="review-form-fields__header"><h2>Ваше общее впечатление:</h2></header>
 
-              <div class="radiobutton">
-                <input type="radio" name="impression-positive" id="impressionPositive" checked>
-                <label for="impressionPositive">Скорее положительное</label>
-              </div>
-
-              <div class="radiobutton">
-                <input type="radio" name="impression-positive" id="impressionNegative">
-                <label for="impressionNegative">Скорее отрицательное</label>
+              <div class="firefox-space-around-fix">
+                <div class="radiobutton">
+                  <input type="radio" name="impression-positive" id="impressionPositive" checked>
+                  <label for="impressionPositive">Скорее положительное</label>
+                </div>
+                
+                <div class="radiobutton">
+                  <input type="radio" name="impression-positive" id="impressionNegative">
+                  <label for="impressionNegative">Скорее отрицательное</label>
+                </div>
               </div>
             </div>
 
             <div class="review-form-fields">
-              <header class="review-form-fields__header">Даты вашей поездки:</header>
+              <header class="review-form-fields__header"><h2>Даты вашей поездки:</h2></header>
 
               <div class="trip-dates">
                 <div class="input  trip-dates__item">
@@ -87,7 +89,9 @@
 
                 <div class="spinner  trip-dates__item">
                   <span class="spinner__minus  button  button--light-grey  button--minus"></span>
-                  <input type="number" name="stay-length" id="stayLength" min="1" max="999" value="1" required>
+                  <div class="spinner__input  spinner__input--days">
+                    <input type="number" name="stay-length" id="stayLength" min="1" max="999" value="1" required>
+                  </div>
                   <span class="spinner__plus  button  button--light-grey  button--plus"></span>
                   <label class="mobile-show" for="stayLength">Длительность пребывания:</label>
                   <label class="mobile-hide" for="stayLength">Дней пребывания:</label>
@@ -101,11 +105,13 @@
             </div>
 
             <div class="review-form-fields  review-form-fields--travelers">
-              <header class="review-form-fields__header">Количество путешественников:</header>
+              <header class="review-form-fields__header"><h2>Количество путешественников:</h2></header>
 
               <div class="spinner  spinner--small">
                 <span class="spinner__minus  button  button--light-grey  button--minus"></span>
-                <input type="number" name="number-of-travelers" id="numberOfTravelers" min="1" max="999" value="1" required>
+                <div class="spinner__input  spinner__input--people">
+                  <input type="number" name="number-of-travelers" id="numberOfTravelers" min="1" max="999" value="1" required>
+                </div>
                 <span class="spinner__plus  button  button--light-grey  button--plus"></span>
                 <label class="mobile-show" for="numberOfTravelers">Количество путешественников:</label>
                 <label class="mobile-hide" for="numberOfTravelers">Кол-во путешественников:</label>
@@ -140,7 +146,7 @@
             </div>
 
             <div class="review-form-fields  review-form-fields--sightseeing">
-              <header class="review-form-fields__header">Посещённые достопримечательности:</header>
+              <header class="review-form-fields__header"><h2>Посещённые достопримечательности:</h2></header>
 
               <div class="sightseeings">
                 <div class="sightseeings__item  checkbox">
@@ -166,7 +172,7 @@
             </div>
 
             <div class="review-form-fields  review-form-fields--gallery">
-              <header class="review-form-fields__header">Загрузить фотографии:</header>
+              <header class="review-form-fields__header"><h2>Загрузить фотографии:</h2></header>
 
               <div class="input-files">
                 <input type="file" name="choose-photos" id="choosePhotos" multiple>

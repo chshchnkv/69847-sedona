@@ -8,6 +8,9 @@ $focused-border-width: 4px;
 
   font-weight: bold;
   font-size: $font-size--h2;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
   
   @include colors($bg-color, $text);
   
@@ -16,16 +19,18 @@ $focused-border-width: 4px;
   
   @include transition($what: background-color);
   
-  &:read-write:hover {
+//  read-write не поддерживается в IE, а в firefox работает только с префиксом, но autoprefixer его не добавляет
+  &/*:read-write*/:hover {
     background-color: darken($bg-color, 5%);
   }
   
-  &:read-write:focus {
+  &/*:read-write*/:focus {
     padding: $offset - $focused-border-width;
     
     background-color: $text-color--light;
     
     border: $focused-border-width solid $bg-color;
+    box-shadow: none;
     outline: none;
   }
   

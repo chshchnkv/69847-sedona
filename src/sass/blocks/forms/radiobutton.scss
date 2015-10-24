@@ -6,6 +6,14 @@ $radio-size: $radio-border-size*2 + $radio-inner-size;
 .radiobutton {
   
   margin-bottom: $radio-size;
+  
+  &:last-child {
+    margin-bottom: $radio-size / 2;
+  }
+  
+  @media (min-width: $screen_tablet) {
+    margin-bottom: 0;
+  }
 
   input[type="radio"] {
     

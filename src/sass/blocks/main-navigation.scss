@@ -1,3 +1,5 @@
+$menu-v-padding: 20px;
+
 .main-navigation {
   position: relative;
 
@@ -5,12 +7,12 @@
     position: absolute;
     z-index: 2;
 
-    top: 15px;
-    right: 20px;
+    top: 0;
+    right: 0;
 
     display: block;
-    width: 23px;
-    height: 23px;
+    width: 50px;
+    height: $menu-v-padding * 2 + 1.8 * $html-size-base;
 
     background-image: url("../img/icon-menu.svg");
     background-position: center;
@@ -53,8 +55,8 @@
     a {
       display: block;
 
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: $menu-v-padding;
+      padding-bottom: $menu-v-padding;
 
       font-family: $font-family;
       font-size: $font-size--h2;
@@ -136,7 +138,6 @@
         width: 138px;
         
         padding: 0;
-        font-size: 0; // не знаю что за хак такой пришлось сделать
 
         &:hover {
           background-color: $text-color--light;
