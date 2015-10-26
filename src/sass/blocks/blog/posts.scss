@@ -18,6 +18,8 @@ $blog-meta-icon-size: 11px;
       position: relative;
       flex-basis: 50%;
       
+      max-width: 50%; // фиксит багу в IE
+      
       padding-left: 40px;
       padding-right: 40px;
       
@@ -32,7 +34,6 @@ $blog-meta-icon-size: 11px;
         display: block;
         position: absolute;
         top: 0;
-        left: 0;
         @include centerH;
         width: 80%;
         border-top: 2px solid $borders;
@@ -44,7 +45,6 @@ $blog-meta-icon-size: 11px;
         display: block;
         position: absolute;
         bottom: 0;
-        left: 0;
         @include centerH;
         width: 80%;
         border-bottom: 2px solid $borders;
@@ -53,6 +53,7 @@ $blog-meta-icon-size: 11px;
 
     @media (min-width: $screen_desktop) {
       flex-basis: 33%;
+      max-width: 33%; //фиксит багу в IE
       
       &:nth-child(odd) {
         border-right: none;
@@ -70,7 +71,6 @@ $blog-meta-icon-size: 11px;
         display: block;
         position: absolute;
         bottom: 0;
-        left: 0;
         @include centerH;
         width: 80%;
         border-bottom: 2px solid $borders;
