@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 module.exports = function(grunt) {
-  require('load-grunt-tasks')(grunt);
+  require("load-grunt-tasks")(grunt);
 
   var config = {
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON("package.json"),
 
     sass: {
       style: {
@@ -17,11 +17,11 @@ module.exports = function(grunt) {
     postcss: {
       options: {
         processors: [
-          require('autoprefixer')({browsers: 'last 2 versions'})
+          require("autoprefixer")({browsers: "last 2 versions"})
         ]
       },
       style: {
-        src: 'build/css/*.css'
+        src: "build/css/*.css"
       }
     },
     
@@ -48,27 +48,28 @@ module.exports = function(grunt) {
     concat: {
       main: {
         src: [
-          'node_modules/mustache/mustache.min.js',
-          'node_modules/moment/min/moment-with-locales.min.js',
-          'src/js/menu.js',
-          'src/js/modals.js',
-          'src/js/send.js',
-          'src/js/spinner.js'
+          "node_modules/mustache/mustache.min.js",
+          "node_modules/moment/min/moment-with-locales.min.js",
+          "src/js/menu.js",
+          "src/js/modals.js",
+          "src/js/send.js",
+          "src/js/spinner.js"
         ],
-        dest: 'build/js/scripts.js'
+        dest: "build/js/scripts.js"
       }
     },
     
     uglify: {
       main: {
         files: {
-          'build/js/scripts.min.js': ['build/js/scripts.js']
+          "build/js/scripts.min.js": ["build/js/scripts.js"]
         }
       }
     },
     
     clean: {
-      build: ["build"]
+      build: ["build"],
+      watch_html: ["build/*.html"]
     },
     
     copy: {
@@ -81,6 +82,15 @@ module.exports = function(grunt) {
             "img/**",
             "*.html"
           ],
+          dest: "build"
+        }]
+      },
+      
+      watch_html: {
+        files: [{
+          expand: true,
+          cwd: "src",
+          src: ["*.html"],
           dest: "build"
         }]
       }
@@ -100,7 +110,7 @@ module.exports = function(grunt) {
     
     watch: {
       configFiles: {
-        files: [ 'Gruntfile.js', 'config/*.js' ],
+        files: [ "Gruntfile.js", "config/*.js" ],
         options: {
           reload: true
         }
@@ -111,8 +121,26 @@ module.exports = function(grunt) {
       },
 
       style: {
-        files: ['src/sass/**/*.scss', 'src/sass/*.scss', 'src/js/**/*.js', 'js/*.js', 'src/*.html'],
-        tasks: ['clean', 'copy', 'sass', 'cmq', 'postcss', 'cssmin', 'imagemin', 'concat','uglify'],
+        files: ["src/sass/**/*.scss", "src/sass/*.scss"],
+        tasks: ["sass", "cmq", "postcss", "cssmin", "imagemin"],
+        options: {
+          spawn: false,
+          livereload: true
+        }
+      },
+      
+      script: {
+        files: ["src/js/**/*.js"],
+        tasks: ["concat", "uglify"],
+        options: {
+          spawn: false,
+          livereload: true
+        }
+      },
+      
+      html: {
+        files: ["src/*.html"],
+        tasks: ["clean:watch_html", "copy:watch_html"],
         options: {
           spawn: false,
           livereload: true
@@ -134,9 +162,8 @@ module.exports = function(grunt) {
     "uglify"
   ]);
 
-  config = require('./.gosha')(grunt, config);
+  config = require("./.gosha")(grunt, config);
 
   grunt.initConfig(config);
   
-//  grunt.loadNpmTasks('grunt-contrib-watch');
 };
